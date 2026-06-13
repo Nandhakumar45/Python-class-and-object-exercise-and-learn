@@ -1,0 +1,16 @@
+when object is created, whatever the code inside def__init__ (self,) will execute. That is called as constructor
+
+class Employee:
+    def __init__(self, name):
+        print("Constructor is running...")
+        self.name = name
+
+emp1 = Employee("Nandha")
+
+
+*****************Best way to explain**********************
+More accurately:
+
+__init__() is the constructor method in Python.
+When an object is created, Python automatically calls __init__().
+All the code inside __init__() runs at that moment.

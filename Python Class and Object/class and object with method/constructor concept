@@ -1,0 +1,52 @@
+
+class Employee:
+    def __init__(XYZ, name):
+        XYZ.name = name
+
+    def display(XYZ):
+        print(XYZ.name)
+
+emp1 = Employee("Nandha")
+emp1.display()
+
+
+****************
+so we no need to specify the "Self" key word over there. we can descrive whatever want.
+*****************************************Best program to explain*************
+
+class Car:
+    def __init__(self, brand, year):
+        self.brand = brand
+        self.year = year
+
+    def show_details(self):
+        print("Brand:", self.brand)
+        print("Year:", self.year)
+
+car1 = Car("BMW", 2020)
+car1.show_details()
+
+Explain this code line by line
+
+
+class Car created
+        │
+        ▼
+car1 = Car("BMW", 2020)
+        │
+        ▼
+__init__(car1, "BMW", 2020)
+        │
+        ▼
+car1.brand = "BMW"
+car1.year = 2020
+        │
+        ▼
+car1.show_details()
+        │
+        ▼
+show_details(car1)
+        │
+        ▼
+Print car1.brand
+Print car1.year

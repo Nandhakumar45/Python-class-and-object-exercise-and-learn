@@ -18,8 +18,4 @@ def process_number(n):
     return result
 
 
-# Example usage
-number = int(input("Enter a three-digit number: "))
-output = process_number(number)
-print(output)
 

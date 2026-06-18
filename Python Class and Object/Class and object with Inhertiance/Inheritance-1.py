@@ -287,6 +287,56 @@ print(f"Area: {B1.area()}")
 print(f"Volume: {B1.volume()}")
 
 '''
+'''
+class Account:
+    def __init__(self,account_holder,balance):
+        self.account_holder = account_holder
+        self.balance =  balance
+
+    #def account_info(self):
+
+
+
+class Savingsaccount(Account):
+    def __init__(self,account_holder, balance, interest_rate):
+        super().__init__(account_holder, balance)
+        self.interest_rate = interest_rate
+
+    def display(self):
+        print(f"Holder: {self.account_holder}")
+        print(f"balance: {self.balance}")
+        print(f"interest_rate: {self.interest_rate}")
+
+S1 = Savingsaccount("Kumar", 5000, "7%")
+S1.display()
+
+'''
+class Greeting:
+    def greet(self):
+        print("Hello")
+
+class Welcome(Greeting):
+    def greet(self):
+        super().greet()
+        print("Welcome to python")
+
+W1 = Welcome()
+W1.greet()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

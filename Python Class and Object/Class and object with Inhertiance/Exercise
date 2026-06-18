@@ -1,0 +1,117 @@
+Here are **5 exercises** on Python Inheritance, from basic to advanced:
+
+---
+
+## Exercise 1 — Basic Inheritance (Easy)
+
+Create a `Vehicle` class with `brand` and `speed`, and a method `show_info()`.
+Create a child class `Car` that adds a `doors` attribute and inherits `show_info()`.
+
+```
+Expected Output:
+Brand: Toyota | Speed: 120 | Doors: 4
+```
+class Vehicle:
+    def __init__(self, brand, speed):
+        self.brand = brand
+        self.speed = speed
+
+    def show_info(self):
+        self.brand = brand
+        self.speed = speed
+
+class car(Vehicle):
+
+    def show_info(self, brand, speed, doors):
+        self.brand = brand
+        self.speed = speed
+        self.doors = doors
+
+
+ car_1 = car("Toyota", 120, 4)
+ car_1.show_info
+
+
+
+
+
+
+
+
+
+---
+
+## Exercise 2 — Method Overriding (Easy–Medium)
+
+Create a `Shape` class with an `area()` method that prints `"Area not defined"`.
+Override `area()` in child classes `Circle` and `Rectangle` with actual calculations.
+
+```
+Expected Output:
+Circle Area: 78.5
+Rectangle Area: 24
+```
+
+---
+
+## Exercise 3 — Multi-level Inheritance (Medium)
+
+Create 3 levels:
+- `Person` → has `name`, `age`
+- `Employee(Person)` → adds `company`
+- `Manager(Employee)` → adds `department`
+
+Manager should display all 4 attributes using one method.
+
+```
+Expected Output:
+Name: Nandha | Age: 30 | Company: Philips | Department: QA
+```
+
+---
+
+## Exercise 4 — Multiple Inheritance (Medium)
+
+Create two parent classes:
+- `Engine` → method `start_engine()` prints `"Engine Started"`
+- `GPS` → method `navigate()` prints `"Navigation On"`
+
+Create a child class `SmartCar` that inherits **both** and has its own method `status()` that calls both parent methods.
+
+```
+Expected Output:
+Engine Started
+Navigation On
+SmartCar is ready!
+```
+
+---
+
+## Exercise 5 — `super()` with Constructor Chain (Hard)
+
+Create:
+- `Animal` → `name`, `age`
+- `Pet(Animal)` → adds `owner`
+- `TrainedPet(Pet)` → adds `skill`
+
+Each class must use `super().__init__()` to pass values up the chain.
+Final object should print all 4 values.
+
+```
+Expected Output:
+Name: Bruno | Age: 3 | Owner: Nandha | Skill: Sit & Stay
+```
+
+---
+
+## Practice Plan
+
+| Exercise | Concept Practiced |
+|---|---|
+| 1 | Basic inheritance, `__init__` |
+| 2 | Method overriding |
+| 3 | Multi-level inheritance |
+| 4 | Multiple inheritance |
+| 5 | `super()` chaining |
+
+Try each one yourself first — then share your code here and I'll review it! 💪

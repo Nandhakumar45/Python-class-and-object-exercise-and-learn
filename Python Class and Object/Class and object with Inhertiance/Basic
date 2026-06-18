@@ -1,0 +1,109 @@
+Inheritance is one of the core concepts of object-oriented programming. Basically, it lets you define a new class (called a "child" or "derived" class) based on an existing class (called a "parent" or "base" class). The child class inherits attributes and methods from the parent, so you can reuse and extend functionality without rewriting code.
+
+For example, imagine a parent class called Vehicle, which has general attributes like make and model. Then you create a child class Car that inherits from Vehicle but adds its own attributes, like num_doors. This way, the child class automatically has the parent’s properties, but can also introduce new ones.
+
+
+Let’s walk through a simple example. We’ll create a parent class called Vehicle, and then a child class called Car that inherits from it.
+
+Here’s the code:
+
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+
+    def display_info(self):
+        print(f"Vehicle Make: {self.make}")
+        print(f"Vehicle Model: {self.model}")
+
+class Car(Vehicle):
+    def __init__(self, make, model, num_doors):
+        # Call the parent class constructor
+        super().__init__(make, model)
+        self.num_doors = num_doors
+
+    def display_info(self):
+        # Call the parent method first
+        super().display_info()
+        print(f"Number of Doors: {self.num_doors}")
+
+# Create a Vehicle instance
+vehicle = Vehicle("Toyota", "Corolla")
+vehicle.display_info()
+
+print()  # Just to separate outputs
+
+# Create a Car instance
+car = Car("BMW", "X5", 4)
+car.display_info()
+Explanation:
+The Vehicle class has a constructor (__init__) that takes make and model, and a method display_info() that prints out those details.
+The Car class inherits from Vehicle. It uses super()
+Hey Lila, could you please explain the above content which you gave, right? Could you please explain it again? Go through that walk through of creating the parent vehicle class and child class.
+
+Of course! Let's break it down slowly and clearly.
+
+We’re going to create a parent class called Vehicle, and then a child class called Car that builds on it.
+
+Step-by-Step Walkthrough
+
+Parent Class (Vehicle)
+We define a class called Vehicle. This class will represent any general vehicle, and it will store basic information like the make (brand) and the model.
+
+class Vehicle:
+    def __init__(self, make, model):
+        self.make = make
+        self.model = model
+The __init__ method is the constructor. Whenever we create a Vehicle object, we pass in a make (like "Toyota") and a model (like "Corolla"), and these get stored in the object.
+
+We also define a method called display_info(), which will print out the vehicle’s make and model.
+
+    def display_info(self):
+        print(f"Vehicle Make: {self.make}")
+        print(f"Vehicle Model: {self.model}")
+Here, self refers to the object we create. When we call display_info(), it will print out the make and model of that specific vehicle.
+
+Child Class (Car)
+Now we create a Car class that inherits from Vehicle. This means a car is a type of vehicle, so it should get the make and model from the parent class. But we also add something extra—like the number of doors, which is specific to a car.
+
+class Car(Vehicle):
+    def __init__(self, make, model, num_doors):
+        # Call the parent class (Vehicle) constructor
+        super().__init__(make, model)  # This passes make and model to Vehicle
+        self.num_doors = num_doors  # Add the new attribute for cars
+In this constructor, we still need make and model, just like in Vehicle, so we call the parent class’s __init__() using super(). Then we add a new attribute—num_doors—specific to cars.
+
+After that, we override the display_info() method to add more details, so it first calls the parent method (to print make and model), and then prints the number of doors.
+
+    def display_info(self):
+        super().display_info()  # Call parent method first
+        print(f"Number of Doors: {self.num_doors}")
+
+Create Objects
+Now we create an object of Vehicle and an object of Car.
+
+vehicle = Vehicle("Toyota", "Corolla")
+vehicle.display_info()
+
+When we call vehicle.display_info(), it prints:
+
+Vehicle Make: Toyota
+Vehicle Model: Corolla
+
+Then we create a car object:
+
+car = Car("BMW", "X5", 4)
+car.display_info()
+
+Now the car will print:
+
+Vehicle Make: BMW
+Vehicle Model: X5
+Number of Doors: 4
+Summary of What’s Happening:
+The parent class Vehicle defines a basic template for any vehicle.
+The child class Car inherits all the properties of Vehicle (make and model) but also adds something new (number of doors).
+We use super() in the child class to call the parent’s constructor, so we don’t have to rewrite the code.
+
+In short, inheritance lets us build specialized versions of a general concept—like a car being a specialized type of vehicle!
+

@@ -170,6 +170,136 @@ c1 = Manager("Alice", 70000, "HR")
 c1.call()
 '''
 
+'''
+class Animal:
+    def make_sound(self):
+        print("Animal makes a sound")
+
+
+class Dog(Animal):
+    def make_sound(self):
+        super().make_sound()  # Call parent class method
+        print("Dog barks")
+
+
+# Create object
+d1 = Dog()
+d1.make_sound()
+
+'''
+'''
+class Product:
+    def __init__(self,name, price):
+        self.name = name
+        self.price = price
+
+    def product_method(self):
+        print(f"name: {self.name} | price: {self.price}")
+        print("hello world")
+
+class Laptop(Product):
+    def __init__(self, name, price, ram):
+        super().__init__(name, price)
+        self.ram = ram
+
+    def product_method(self):
+        print(f"name: {self.name} | price: {self.price} | ram {self.ram}")
+
+L1 = Laptop("Dell", 65000, "16GB")
+L2 = Product("Dell", 65000, )
+
+L1.product_method()
+L2.product_method()
+
+'''
+'''
+ # Exercise 5 — Multi-Level Inheritance
+
+class Person:
+    def __init__(self,name):
+        self.name = name
+
+class Employee(Person):
+    def __init__(self, name, employee_id):
+        super().__init__(name)
+        self.employee_id = employee_id
+
+class Developer(Employee):
+    def __init__(self, name, employee_id, programming_language):
+        super().__init__(name,employee_id)
+        self.programming_language = programming_language
+
+    def dev(self):
+        print(f"Name: {self.name}, Employee ID: {self.employee_id}, Language: {self.programming_language}")
+
+D1 = Developer ("David", "E101", "Python")
+D1.dev()
+
+'''
+'''
+This code is wrong one:
+
+class Rectangle:
+    def __init__(self, length, width ):
+        self.length = length
+        self.width = width
+
+    def area(self, length, width):
+        return length * width
+
+class Box(Rectangle):
+    def __init__(self, length, width, height):
+        super().__init__(length, width)
+        self.height = height
+
+    def area(self, length, width, height):
+        return length * width * height
+
+B1 = Box(10,10, 10)
+B1.area()
+
+
+This code is correctd one
+
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+
+class Box(Rectangle):
+    def __init__(self, length, width, height):
+        super().__init__(length, width)
+        self.height = height
+
+    def volume(self):
+        base_area = super().area()
+        return base_area * self.height
+
+
+B1 = Box(10, 5, 5)
+
+print(f"Area: {B1.area()}")
+print(f"Volume: {B1.volume()}")
+
+'''
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

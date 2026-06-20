@@ -1,0 +1,42 @@
+Polymorphism is a key concept in object-oriented programming, including Python. At a high level, it means that different
+ classes can define their own version of a method, but you can call that method on objects of different types, and Python will figure out which one to use.
+
+In simpler terms, you can have a method with the same name in different classes, but each class can implement it differently.
+That way, you can treat all these different objects in a uniform way (since they share the same method name) but still have their own specific behavior.
+For example, imagine a parent class called Animal with a method speak().
+Then, you have a Dog class and a Cat class, each implementing speak() differently.
+When you call speak() on a Dog object, it barks; when you call it on a Cat object, it meows—yet you’re using the same method name.
+That’s polymorphism! Let me know if you'd like a code example!
+
+
+class Circle:
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        print(f"Circle area: {3.14 * self.radius * self.radius}")
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        print(f"Rectangle area: {self.length * self.width}")
+
+class Triangle:
+    def __init__(self, base, height):
+        self.base = base
+        self.height = height
+
+    def area(self):
+        print(f"Triangle area: {0.5 * self.base * self.height}")
+
+c1 = Circle(5)
+c1.area()
+
+r1 = Rectangle(4, 6)
+r1.area()
+
+t1 = Triangle(3, 8)
+t1.area()

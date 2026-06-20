@@ -251,3 +251,34 @@ R1 = Rectangle("Rectangle", 5, 5)
 R1.area()
 
 """
+# **Exercise 8 (Intermediate):** Create a parent class `Bank` with constructor and `interest()` method.
+# Child classes `SavingsAccount`, `CheckingAccount` override it with different interest rates.
+# Expected output: Interest calculations for each account type.
+
+class Bank:
+    def __init__(self,interest):
+        self.interest = interest
+    def interest(self):
+        pass
+
+class SavingsAccount(Bank):
+    def __init__(self,interest, savings):
+        super().__init__(interest)
+        self.savings = savings
+
+    def interest(self):
+        print(f"{self.savings}")
+
+class CheckingAccount(Bank):
+    def __init__(self, interest, CheckingAccount):
+        super().__init__(interest)
+        self.CheckingAccount = CheckingAccount
+
+    def interest(self):
+        print(f"{self.CheckingAccount}")
+
+S1 = SavingsAccount( "5%", "Yes")
+S1.interest()
+
+C1 = CheckingAccount("5%", "Yes")
+C1.interest()

@@ -1,0 +1,36 @@
+
+Right, here are all ten exercises from beginner to intermediate level with task descriptions and expected outputs:
+
+**Exercise 1 (Easy):** Create classes `Dog`, `Cat`, `Bird` with a `sound()` method.
+Expected output: Dog barks, Cat meows, Bird chirps.
+
+**Exercise 2 (Easy):** Create classes `Apple`, `Banana`, `Orange` with a `color()` method.
+ Expected output: Apple is red, Banana is yellow, Orange is orange.
+
+**Exercise 3 (Easy):** Create classes `Square`, `Circle`, `Rectangle` with a `perimeter()` method.
+Expected output: Different perimeter calculations for each shape.
+
+**Exercise 4 (Medium):** Create a parent class `Vehicle` with a `speed()` method. Child classes `Car`, `Bike`, `Truck` override it.
+Expected output: Car goes 100 km/h, Bike goes 80 km/h, Truck goes 60 km/h.
+
+**Exercise 5 (Medium):** Create a parent class `Employee` with a `salary()` method. Child classes `Manager`, `Developer`, `Designer` override it with different salaries.
+Expected output: Different salary amounts for each role.
+
+**Exercise 6 (Medium):** Create classes `Laptop`, `Phone`, `Tablet` with a `battery_life()` method.
+Expected output: Different battery hours for each device.
+
+**Exercise 7 (Intermediate):** Create a parent class `Shape` with constructor and `area()` method. Child classes `Circle`, `Square`, `Rectangle` calculate different areas.
+Expected output: Area calculations for each shape.
+
+**Exercise 8 (Intermediate):** Create a parent class `Bank` with constructor and `interest()` method. Child classes `SavingsAccount`, `CheckingAccount` override it with different interest rates.
+Expected output: Interest calculations for each account type.
+
+**Exercise 9 (Intermediate):** Create a parent class `Animal` with constructor taking name. Child classes `Lion`, `Elephant`, `Zebra` override `eat()` method.
+xpected output: Lion eats meat, Elephant eats plants, Zebra eats grass.
+
+*Here's Exercise 10 fully laid out:
+Exercise 10 (Intermediate): Create a parent class PaymentMethod with a constructor that takes amount. Child classes CreditCard, UPI, and NetBanking inherit from it and override a process() method with their own processing messages. Create one object for each child class with different amounts, then call process() on each.
+Expected Output:
+CreditCard processed payment of 5000 rupees
+UPI processed payment of 3000 rupees
+NetBanking processed payment of 7000 rupees

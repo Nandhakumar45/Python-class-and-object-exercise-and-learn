@@ -331,29 +331,41 @@ Z1 = Zebra("Zebra", "Grass")
 Z1.eat()
 
 """
-
-Exercise 10 (Intermediate): Create a parent class PaymentMethod with a constructor that takes amount.
-Child classes CreditCard, UPI, and NetBanking inherit from it and override a process() method with their own processing messages.
-Create one object for each child class with different amounts, then call process() on each.
-Expected Output:
-CreditCard processed payment of 5000 rupees
-UPI processed payment of 3000 rupees
-NetBanking processed payment of 7000 rupees
+"""
+# Exercise 10 (Intermediate): Create a parent class PaymentMethod with a constructor that takes amount.
+# Child classes CreditCard, UPI, and NetBanking inherit from it and override a process() method with their own processing messages.
+# Create one object for each child class with different amounts, then call process() on each.
+# Expected Output:
+# CreditCard processed payment of 5000 rupees
+# UPI processed payment of 3000 rupees
+# NetBanking processed payment of 7000 rupees
 
 class PaymentMethod:
-    def __init__(self, takes_amount):
-        self.takes_amount = takes_amount
+    def __init__(self, amount):
+        self.amount = amount
 
-
-class Creditcard(PaymentMethod):
-    def __init__(self,takes_amount, creditcard):
-        self.creditcard = creditcard
+class CreditCard(PaymentMethod):
+    def process(self):
+        print(f"CreditCard processed payment of {self.amount} rupees")
 
 class UPI(PaymentMethod):
+    def process(self):
+        print(f"UPI processed payment of {self.amount} rupees")
 
 class NetBanking(PaymentMethod):
+    def process(self):
+        print(f"NetBanking processed payment of {self.amount} rupees")
 
+c1 = CreditCard(5000)
+c1.process()
 
+u1 = UPI(3000)
+u1.process()
+
+n1 = NetBanking(7000)
+n1.process()
+
+"""
 
 
 

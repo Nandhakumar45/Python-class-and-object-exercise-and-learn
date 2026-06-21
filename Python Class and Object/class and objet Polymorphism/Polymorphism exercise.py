@@ -285,3 +285,76 @@ C1 = CheckingAccount("5%", "Yes")
 C1.interest()
 
 """
+
+"""
+#**Exercise 9 (Intermediate):** Create a parent class `Animal` with constructor taking name. Child classes `Lion`, `Elephant`, `Zebra` override `eat()` method.
+#xpected output: Lion eats meat, Elephant eats plants, Zebra eats grass.
+
+class Animal:
+    def __init__(self,name):
+        self.name = name
+
+    def eat(self):
+        pass
+
+class Lion(Animal):
+    def __init__(self,name,eats):
+        super().__init__(name)
+        self.eats = eats
+
+    def eat(self):
+        print(f"The {self.name} eats {self.eats}")
+
+class Elephant(Animal):
+    def __init__(self,name,eats):
+        super().__init__(name)
+        self.eats = eats
+
+    def eat(self):
+        print(f"The {self.name} eats {self.eats}")
+
+class Zebra(Animal):
+    def __init__(self,name,eats):
+        super().__init__(name)
+        self.eats = eats
+
+    def eat(self):
+        print(f"The {self.name} eats {self.eats}")
+
+L1 = Lion("Lion", "Meat")
+L1.eat()
+
+E1 = Elephant("Elephant","Plant")
+E1.eat()
+
+Z1 = Zebra("Zebra", "Grass")
+Z1.eat()
+
+"""
+
+Exercise 10 (Intermediate): Create a parent class PaymentMethod with a constructor that takes amount.
+Child classes CreditCard, UPI, and NetBanking inherit from it and override a process() method with their own processing messages.
+Create one object for each child class with different amounts, then call process() on each.
+Expected Output:
+CreditCard processed payment of 5000 rupees
+UPI processed payment of 3000 rupees
+NetBanking processed payment of 7000 rupees
+
+class PaymentMethod:
+    def __init__(self, takes_amount):
+        self.takes_amount = takes_amount
+
+
+class Creditcard(PaymentMethod):
+    def __init__(self,takes_amount, creditcard):
+        self.creditcard = creditcard
+
+class UPI(PaymentMethod):
+
+class NetBanking(PaymentMethod):
+
+
+
+
+
+

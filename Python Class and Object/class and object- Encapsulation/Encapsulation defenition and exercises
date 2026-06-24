@@ -1,0 +1,101 @@
+No problem! Let's start from zero, slowly.
+
+## First, what's a "class"?
+
+Think of a class like a **blueprint for a TV remote**. Inside the remote, there's a battery (data) and buttons (methods) to control it.
+
+## What's "encapsulation"?
+
+It means: **don't let people touch the battery directly. Let them only use the buttons.**
+
+Why? Because if someone touches the battery with bare hands, they might break it or get a shock. But if they press the volume button, the remote handles it safely internally.
+
+In programming:
+- The **battery** = your data (variables)
+- The **buttons** = your methods (functions) that safely change the data
+
+******
+class Account:
+    def __init__(self, balance):
+        self.balance = balance
+
+acc = Account(1000)
+acc.balance = -5000   # Oops! Anyone can set anything, even invalid values
+
+print(acc.balance)
+************
+
+## A real example
+
+Imagine a **Bank Account**. It has money (balance). We don't want people directly changing the balance to anything — we want rules.
+
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance   # __ means "hidden/private"
+```
+
+Now `__balance` is hidden. No one outside the class can touch it directly.
+
+## So how do we read or change it?
+
+We make two special methods:
+
+**1. Getter** — to "see" the value
+```python
+    def get_balance(self):
+        return self.__balance
+```
+
+**2. Setter** — to "change" the value, but with rules
+```python
+    def set_balance(self, amount):
+        if amount < 0:
+            print("Not allowed! Balance can't be negative")
+        else:
+            self.__balance = amount
+```
+
+## Full code together
+
+```python
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+    def set_balance(self, amount):
+        if amount < 0:
+            print("Not allowed! Balance can't be negative")
+        else:
+            self.__balance = amount
+
+
+# Using it
+acc = BankAccount(1000)
+
+print(acc.get_balance())     # 1000  -> reading safely
+
+acc.set_balance(-500)        # Not allowed! Balance can't be negative
+acc.set_balance(2000)        # this is fine
+
+print(acc.get_balance())     # 2000
+```
+
+## Simple step-by-step flow (in words)
+
+```
+Step 1: Create a variable, but hide it using __ (double underscore)
+Step 2: Make a "get" method -> lets you SEE the hidden value
+Step 3: Make a "set" method -> lets you CHANGE the value, but with checks
+Step 4: Outside code uses get_balance() and set_balance()
+        instead of touching __balance directly
+```
+
+## One-line summary to remember
+
+> **Encapsulation = Hide the data + Give safe doors (methods) to access it.**
+
+Want me to show this as a picture/diagram next, so you can visualize the "hidden data + doors" idea?

@@ -99,3 +99,116 @@ Step 4: Outside code uses get_balance() and set_balance()
 > **Encapsulation = Hide the data + Give safe doors (methods) to access it.**
 
 Want me to show this as a picture/diagram next, so you can visualize the "hidden data + doors" idea?
+
+
+Here are 10 Python encapsulation problems, ranging from easy to hard. No solutions included — try them out and share your code for review.
+
+**Problem 1 (Easy) — Basic Private Attribute**
+Create a class `BankAccount` with a private attribute `__balance`. Initialize it in the constructor with a starting balance. Add a getter method `get_balance()` that returns the balance.
+
+Expected output:
+```
+account = BankAccount(1000)
+print(account.get_balance())
+# Output: 1000
+```
+
+**Problem 2 (Easy) — Getter and Setter**
+Create a class `Student` with a private attribute `__marks`. Add a getter `get_marks()` and a setter `set_marks(value)` that only allows values between 0 and 100. If an invalid value is passed, print an error message and don't update.
+
+Expected output:
+```
+s = Student()
+s.set_marks(85)
+print(s.get_marks())   # Output: 85
+s.set_marks(150)        # Output: Invalid marks!
+print(s.get_marks())   # Output: 85 (unchanged)
+```
+
+**Problem 3 (Easy) — Using @property**
+Create a class `Circle` with a private attribute `__radius`. Use the `@property` decorator to create a `radius` property with a getter and setter. The setter should reject negative values.
+
+Expected output:
+```
+c = Circle(5)
+print(c.radius)   # Output: 5
+c.radius = -2      # Output: Radius cannot be negative!
+print(c.radius)   # Output: 5
+```
+
+**Problem 4 (Medium) — Deposit and Withdraw with Validation**
+Extend the `BankAccount` class. Add `deposit(amount)` and `withdraw(amount)` methods. Withdrawal should fail if the amount exceeds the balance, printing an error message instead.
+
+Expected output:
+```
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())   # Output: 1500
+account.withdraw(2000)          # Output: Insufficient balance!
+print(account.get_balance())   # Output: 1500
+```
+
+**Problem 5 (Medium) — Read-Only Property**
+Create a class `Employee` with private attributes `__name` and `__id`. Make `id` a read-only property (getter only, no setter) since an employee's ID should never change after creation.
+
+Expected output:
+```
+e = Employee("Kumar", 101)
+print(e.id)     # Output: 101
+e.id = 102       # Should raise AttributeError (can't set attribute)
+```
+
+**Problem 6 (Medium) — Encapsulation with Calculated Property**
+Create a class `Rectangle` with private attributes `__length` and `__width`. Add a property `area` that calculates and returns length × width (no setter needed since it's derived).
+
+Expected output:
+```
+r = Rectangle(5, 4)
+print(r.area)   # Output: 20
+```
+
+**Problem 7 (Medium) — Name Mangling Check**
+Create a class `Wallet` with a double-underscore private attribute `__money`. Try accessing `wallet._Wallet__money` directly from outside the class (name mangling) and also try `wallet.__money` to see the difference.
+
+Expected output:
+```
+w = Wallet(500)
+print(w._Wallet__money)   # Output: 500
+print(w.__money)           # Output: AttributeError
+```
+
+**Problem 8 (Hard) — Multiple Private Attributes with Validation**
+Create a class `Person` with private attributes `__name`, `__age`, and `__email`. Add getters/setters for all three. The age setter should reject negative values; the email setter should reject any string without "@" in it.
+
+Expected output:
+```
+p = Person("Arun", 25, "arun@gmail.com")
+p.set_age(-5)            # Output: Invalid age!
+p.set_email("arungmail")  # Output: Invalid email!
+print(p.get_age())        # Output: 25
+print(p.get_email())      # Output: arun@gmail.com
+```
+
+**Problem 9 (Hard) — Encapsulation in Inheritance**
+Create a base class `Vehicle` with a private attribute `__speed`. Create a getter/setter for it. Create a subclass `Car` that tries to access `__speed` directly (it should fail) but works fine using the inherited getter/setter methods.
+
+Expected output:
+```
+car = Car("Toyota")
+car.set_speed(120)
+print(car.get_speed())   # Output: 120
+# Direct access car.__speed from Car class would fail (name mangling)
+```
+
+**Problem 10 (Hard) — Full Encapsulation with Property Decorators and Custom Exceptions**
+Create a class `Temperature` with a private attribute `__celsius`. Use `@property` for `celsius` getter/setter, and add a computed `fahrenheit` property (getter only) that converts celsius to fahrenheit. The setter for `celsius` should raise a `ValueError` if the temperature is below -273.15 (absolute zero).
+
+Expected output:
+```
+t = Temperature(25)
+print(t.celsius)      # Output: 25
+print(t.fahrenheit)   # Output: 77.0
+t.celsius = -300        # Should raise ValueError: Temperature below absolute zero!
+```
+
+Try these out one at a time, and send me your code whenever you want it reviewed.

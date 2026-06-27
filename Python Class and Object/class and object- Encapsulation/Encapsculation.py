@@ -104,7 +104,7 @@ print(E1.get_salary())
 print(E1.set_salary(44))
 
 """
-
+"""
 #****************************Exercise 3*******************
 
 class Product:
@@ -125,6 +125,100 @@ P1 = Product(34)
 P1.set_price(56)
 print(P1.get_price())
 print(P1.set_price(44))
+
+"""
+"""
+**Problem 1 (Easy) — Basic Private Attribute**
+Create a class `BankAccount` with a private attribute `__balance`. Initialize it in the constructor with a starting balance.
+Add a getter method `get_balance()` that returns the balance.
+
+Expected output:
+```
+account = BankAccount(1000)
+print(account.get_balance())
+# Output: 1000
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+account = BankAccount(1000)
+print(account.get_balance())
+
+"""
+""""
+**Problem 2 (Easy) — Getter and Setter**
+Create a class `Student` with a private attribute `__marks`. Add a getter `get_marks()` and a setter `set_marks(value)`
+that only allows values between 0 and 100. If an invalid value is passed, print an error message and don't update.
+
+Expected output:
+```
+s = Student()
+s.set_marks(85)
+print(s.get_marks())   # Output: 85
+s.set_marks(150)        # Output: Invalid marks!
+print(s.get_marks())   # Output: 85 (unchanged)
+
+class Student:
+    def __init__(self, marks):
+        self.__marks = marks
+
+    def get_marks(self):
+        return self.__marks
+
+    def set_marks(self, value):
+        if 0 <= value <= 100:
+            self.__marks = value
+        else:
+            print("Invalid marks!")
+
+S = Student(5)
+S.set_marks(85)
+print(s. get_marks())
+S.set_marks(150)
+print(S.get_marks())
+
+"""
+"""
+**Problem 3 (Easy) — Using @property**
+Create a class `Circle` with a private attribute `__radius`. Use the `@property` decorator to create a `radius`property with a getter and setter.
+The setter should reject negative values.
+
+Expected output:
+```
+c = Circle(5)
+print(c.radius)   # Output: 5
+c.radius = -2      # Output: Radius cannot be negative!
+print(c.radius)   # Output: 5
+```
+
+class Circle:
+    def __init__(self, radius):
+        self.__radius = radius
+
+    @property
+    def radius(self):
+        return self.__radius
+    @radius.setter
+    def radius(self, value):
+        if value < 0:
+            print("Radius cannot be negative!")
+        else:
+            self.__radius = value
+
+c = Circle(5)
+print(c.radius)   # Output: 5
+c.radius = -2      # Output: Radius cannot be negative!
+print(c.radius)   # Output: 5
+
+"""
+
+
+
+
 
 
 

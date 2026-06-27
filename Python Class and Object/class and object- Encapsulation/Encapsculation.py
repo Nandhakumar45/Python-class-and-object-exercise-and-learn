@@ -215,20 +215,71 @@ c.radius = -2      # Output: Radius cannot be negative!
 print(c.radius)   # Output: 5
 
 """
+"""
+**Problem 4 (Medium) — Deposit and Withdraw with Validation**
+Extend the `BankAccount` class. Add `deposit(amount)` and `withdraw(amount)` methods.
+Withdrawal should fail if the amount exceeds the balance, printing an error message instead.
+
+Expected output:
+```
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())   # Output: 1500
+account.withdraw(2000)          # Output: Insufficient balance!
+print(account.get_balance())   # Output: 1500
+```
+
+class BankAccount:
+    def __init__(self, balance):
+        self.__balance = balance
+
+    def get_balance(self):
+        return self.__balance
+
+    def deposit(self, amount):
+        self.__balance += amount
+
+    def withdraw(self, amount):
+        if amount > self.__balance:
+            print("Insufficient balance!")
+        else:
+            self.__balance -= amount
 
 
+account = BankAccount(1000)
+account.deposit(500)
+print(account.get_balance())   # Output: 1500
+account.withdraw(2000)          # Output: Insufficient balance!
+print(account.get_balance())   # Output: 1500
+
+"""
+"""
+# **Problem 5 (Medium) — Read-Only Property**
+# Create a class `Employee` with private attributes `__name` and `__id`. Make `id` a
+# read-only property (getter only, no setter)
+# since an employee's ID should never change after creation.
+#
+# Expected output:
+# ```
+# e = Employee("Kumar", 101)
+# print(e.id)     # Output: 101
+# e.id = 102       # Should raise AttributeError (can't set attribute)
 
 
+class Employee:
+    def __init__(self, name, id):
+        self.__name = name
+        self.__id     = id
 
+    @property
+    def id(self):
+        return self.__id
 
+e = Employee("Kumar", 101)
+print(e.id)     # Output: 101
+e.id = 102       # Should raise AttributeError (can't set attribute)
 
-
-
-
-
-
-
-
+"""
 
 
 

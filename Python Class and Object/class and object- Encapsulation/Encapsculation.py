@@ -333,18 +333,18 @@ except AttributeError as e:
     print("AttributeError:", e)
 
 """
+"""
+**Problem 8 (Hard) — Multiple Private Attributes with Validation**
+Create a class `Person` with private attributes `__name`, `__age`, and `__email`. Add getters/setters for all three.
+The age setter should reject negative values; the email setter should reject any string without "@" in it.
 
-# **Problem 8 (Hard) — Multiple Private Attributes with Validation**
-# Create a class `Person` with private attributes `__name`, `__age`, and `__email`. Add getters/setters for all three.
-# The age setter should reject negative values; the email setter should reject any string without "@" in it.
-#
-# Expected output:
-# ```
-# p = Person("Arun", 25, "arun@gmail.com")
-# p.set_age(-5)             # Output: Invalid age!
-# p.set_email("arungmail")  # Output: Invalid email!
-# print(p.get_age())        # Output: 25
-# print(p.get_email())      # Output: arun@gmail.com
+Expected output:
+```
+p = Person("Arun", 25, "arun@gmail.com")
+p.set_age(-5)             # Output: Invalid age!
+p.set_email("arungmail")  # Output: Invalid email!
+print(p.get_age())        # Output: 25
+print(p.get_email())      # Output: arun@gmail.com
 
 class Person:
     def __init__(self, name, age, email):
@@ -379,12 +379,51 @@ p.set_email("arungmail")  # Output: Invalid email!
 print(p.get_age())        # Output: 25
 print(p.get_email())      # Output: arun@gmail.com
 
+"""
+"""
+**Problem 9 (Hard) — Encapsulation in Inheritance**
+Create a base class `Vehicle` with a private attribute `__speed`. Create a getter/setter for it.
+Create a subclass `Car` that tries to access `__speed` directly (it should fail) but works fine using the inherited getter/setter methods.
+
+Expected output:
+```
+car = Car("Toyota")
+car.set_speed(120)
+print(car.get_speed())   # Output: 120
+# Direct access car.__speed from Car class would fail (name mangling)
+
+class Vehicle:
+    def __init__(self, brand):
+        self.brand = brand
+        self.__speed = 0
+
+    def get_speed(self):
+        return self.__speed
+
+    def set_speed(self, value):
+        self.__speed = value
 
 
+class Car(Vehicle):
+    def __init__(self, brand):
+        super().__init__(brand)
+
+    def try_direct_access(self):
+        # This will fail because __speed mangles to _Car__speed here,
+        # not _Vehicle__speed (where it was actually created)
+        try:
+            return self.__speed
+        except AttributeError as e:
+            return f"AttributeError: {e}"
 
 
+car = Car("Toyota")
+car.set_speed(120)
+print(car.get_speed())   # Output: 120
 
+print(car.try_direct_access())  # Output: AttributeError: 'Car' object has no attribute '_Car__speed'
 
+"""
 
 
 

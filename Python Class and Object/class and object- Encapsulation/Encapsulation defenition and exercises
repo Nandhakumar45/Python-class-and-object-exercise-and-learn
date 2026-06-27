@@ -192,7 +192,8 @@ print(p.get_email())      # Output: arun@gmail.com
 ```
 
 **Problem 9 (Hard) — Encapsulation in Inheritance**
-Create a base class `Vehicle` with a private attribute `__speed`. Create a getter/setter for it. Create a subclass `Car` that tries to access `__speed` directly (it should fail) but works fine using the inherited getter/setter methods.
+Create a base class `Vehicle` with a private attribute `__speed`. Create a getter/setter for it.
+Create a subclass `Car` that tries to access `__speed` directly (it should fail) but works fine using the inherited getter/setter methods.
 
 Expected output:
 ```

@@ -424,9 +424,44 @@ print(car.get_speed())   # Output: 120
 print(car.try_direct_access())  # Output: AttributeError: 'Car' object has no attribute '_Car__speed'
 
 """
+"""
+Create a class `Temperature` with a private attribute `__celsius`. Use `@property` for `celsius` getter/setter,
+and add a computed `fahrenheit` property (getter only) that converts celsius to fahrenheit.
+The setter for `celsius` should raise a `ValueError` if the temperature is below -273.15 (absolute zero).
+
+Expected output:
+```
+t = Temperature(25)
+print(t.celsius)      # Output: 25
+print(t.fahrenheit)   # Output: 77.0
+t.celsius = -300        # Should raise ValueError: Temperature below absolute zero!
 
 
+class Temperature:
+    def __init__(self, celsius):
+        self.__celsius = celsius
 
+    @property
+    def celsius(self):
+        return self.__celsius
+
+    @celsius.setter
+    def celsius(self, value):
+        if value < -273.15:
+            raise ValueError("Temperature below absolute zero!")
+        self.__celsius = value
+
+    @property
+    def fahrenheit(self):
+        return (self.__celsius * 9 / 5) + 32
+
+
+t = Temperature(25)
+print(t.celsius)      # Output: 25
+print(t.fahrenheit)   # Output: 77.0
+t.celsius = -300       # Raises ValueError: Temperature below absolute zero!
+
+"""
 
 
 

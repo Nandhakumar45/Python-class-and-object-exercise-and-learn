@@ -280,6 +280,60 @@ print(e.id)     # Output: 101
 e.id = 102       # Should raise AttributeError (can't set attribute)
 
 """
+"""
+# **Problem 6 (Medium) — Encapsulation with Calculated Property**
+# Create a class `Rectangle` with private attributes `__length` and `__width`. Add a property `area`
+# that calculates and returns length × width (no setter needed since it's derived).
+#
+# Expected output:
+# ```
+# r = Rectangle(5, 4)
+# print(r.area)   # Output: 20
+
+
+class Rectangle:
+    def __init__(self, length, width):
+        self.__length = length
+        self.__width = width
+
+    @property
+    def area(self):
+        return self.__length * self.__width
+
+
+r = Rectangle(5, 4)
+print(r.area())   # Output: 20
+
+"""
+"""
+**Problem 7 (Medium) — Name Mangling Check**
+Create a class `Wallet` with a double-underscore private attribute `__money`. Try accessing `wallet._Wallet__money`
+directly from outside the class (name mangling) and also try `wallet.__money` to see the difference.
+
+Expected output:
+```
+w = Wallet(500)
+print(w._Wallet__money)   # Output: 500
+print(w.__money)           # Output: AttributeErro
+
+class Wallet:
+    def __init__(self, money):
+        self.__money = money
+
+    def wallet_balance(self):
+        return self.__money
+
+
+w = Wallet(500)
+print(w._Wallet__money)   # 500 — name mangling lets you access it this way
+
+try:
+    print(w.__money)
+except AttributeError as e:
+    print("AttributeError:", e)
+
+"""
+
 
 
 

@@ -168,7 +168,8 @@ print(r.area)   # Output: 20
 ```
 
 **Problem 7 (Medium) — Name Mangling Check**
-Create a class `Wallet` with a double-underscore private attribute `__money`. Try accessing `wallet._Wallet__money` directly from outside the class (name mangling) and also try `wallet.__money` to see the difference.
+Create a class `Wallet` with a double-underscore private attribute `__money`. Try accessing `wallet._Wallet__money`
+directly from outside the class (name mangling) and also try `wallet.__money` to see the difference.
 
 Expected output:
 ```

@@ -314,7 +314,7 @@ Expected output:
 ```
 w = Wallet(500)
 print(w._Wallet__money)   # Output: 500
-print(w.__money)           # Output: AttributeErro
+print(w.__money)           # Output: AttributeError
 
 class Wallet:
     def __init__(self, money):
@@ -333,6 +333,63 @@ except AttributeError as e:
     print("AttributeError:", e)
 
 """
+
+# **Problem 8 (Hard) — Multiple Private Attributes with Validation**
+# Create a class `Person` with private attributes `__name`, `__age`, and `__email`. Add getters/setters for all three.
+# The age setter should reject negative values; the email setter should reject any string without "@" in it.
+#
+# Expected output:
+# ```
+# p = Person("Arun", 25, "arun@gmail.com")
+# p.set_age(-5)             # Output: Invalid age!
+# p.set_email("arungmail")  # Output: Invalid email!
+# print(p.get_age())        # Output: 25
+# print(p.get_email())      # Output: arun@gmail.com
+
+class Person:
+    def __init__(self, name, age, email):
+        self.__name = name
+        self.__age = age
+        self.__email = email
+
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+    def get_email(self):
+        return self.__email
+
+    def set_age(self, value):
+        if value < 0:
+            print("Invalid age!")
+        else:
+            self.__age = value
+
+    def set_email(self, value):
+        if "@" not in value:
+            print ("Invalid email!")
+        else:
+            self.__email = value
+
+p = Person("Arun", 25, "arun@gmail.com")
+p.set_age(-5)             # Output: Invalid age!
+p.set_email("arungmail")  # Output: Invalid email!
+print(p.get_age())        # Output: 25
+print(p.get_email())      # Output: arun@gmail.com
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

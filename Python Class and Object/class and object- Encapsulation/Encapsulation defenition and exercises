@@ -179,7 +179,8 @@ print(w.__money)           # Output: AttributeError
 ```
 
 **Problem 8 (Hard) — Multiple Private Attributes with Validation**
-Create a class `Person` with private attributes `__name`, `__age`, and `__email`. Add getters/setters for all three. The age setter should reject negative values; the email setter should reject any string without "@" in it.
+Create a class `Person` with private attributes `__name`, `__age`, and `__email`. Add getters/setters for all three.
+The age setter should reject negative values; the email setter should reject any string without "@" in it.
 
 Expected output:
 ```

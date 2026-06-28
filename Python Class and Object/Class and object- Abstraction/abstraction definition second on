@@ -1,0 +1,93 @@
+
+Your code will give an **error** at this line:
+
+```python
+animal = Animal()
+```
+
+### Why?
+
+Because `Animal` is an **abstract class** and it contains an **abstract method**:
+
+```python
+@abstractmethod
+def sound(self):
+    print("Every animal makes a sound")
+```
+
+Python does **not allow** you to create an object of an abstract class.
+
+### What happens when you run it?
+
+```python
+dog = Dog()
+dog.sound()
+```
+
+Output:
+
+```text
+Woof
+```
+
+Then Python reaches:
+
+```python
+animal = Animal()
+```
+
+and raises an error similar to:
+
+```text
+TypeError: Can't instantiate abstract class Animal
+with abstract method sound
+```
+
+### Think of it this way
+
+`Animal` is just a **blueprint**.
+
+❌ Not allowed:
+
+```python
+animal = Animal()
+```
+
+✅ Allowed:
+
+```python
+dog = Dog()
+cat = Cat()
+```
+
+because `Dog` and `Cat` provide their own implementation of `sound()`.
+
+### If you remove `@abstractmethod`
+
+```python
+from abc import ABC
+
+class Animal(ABC):
+    def sound(self):
+        print("Every animal makes a sound")
+
+animal = Animal()
+animal.sound()
+```
+
+Now it works because `Animal` is no longer abstract.
+
+Output:
+
+```text
+Every animal makes a sound
+```
+
+### Rule to remember
+
+If a class contains **at least one method decorated with `@abstractmethod`**, then:
+
+* ❌ `Animal()` → Not allowed
+* ✅ `Dog()` → Allowed (if `Dog` implements all abstract methods)
+
+That's one of the main purposes of abstraction: **preventing users from creating incomplete objects.**

@@ -474,5 +474,3 @@ t.celsius = -300       # Raises ValueError: Temperature below absolute zero!
 
 
 
-
-

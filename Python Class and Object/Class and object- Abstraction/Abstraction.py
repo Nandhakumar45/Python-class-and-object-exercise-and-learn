@@ -160,9 +160,70 @@ print(e1.fuel_type())      # Battery
 v = Vehicle()   # ❌ raises TypeError
 
 """
+"""
+**5. (Medium)** Create abstract class `Shape` with abstract method `area()` AND a **concrete** (non-abstract) method `describe()`
+that prints `"This shape has an area of {self.area()}"`. Create `Rectangle` subclass.
+Notice how the concrete method uses the abstract method internally — this is template-method style abstraction.
+```
+Expected:
+Rectangle(4, 5).describe() -> "This shape has an area of 20"
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+    def describe(self):
+        print(f"This shape has an area of {self.area()}")
+
+class Rectangle(Shape):
+    def __init__(self, length, width):
+        self.length = length
+        self.width = width
+
+    def area(self):
+        return self.length * self.width
+
+r1 = Rectangle(4,5)
+r1.describe()
+
+"""
+"""
+**6. (Medium-Hard)** Create abstract class `Notification` with abstract method `send(message)`.
+Create `EmailNotification` and `SMSNotification` subclasses.
+Then write a function `notify_all(notifications, message)` that loops through a list of different notification objects and calls `send()`
+ on each — demonstrating **polymorphism through abstraction**.
+```
+Expected:
+notify_all([EmailNotification(), SMSNotification()], "Server down!")
+-> "Email: Server down!"
+-> "SMS: Server down!"
+
+from abc import ABC, abstractmethod
+
+class Notification(ABC):
+    @abstractmethod
+    def send(self, message):
+        pass
+
+class EmailNotification(Notification):
+    def send(self, message):
+        print(f"Email: {message}")
+
+class SMSNotification(Notification):
+    def send(self, message):
+        print(f"SMS: {message}")
+
+def notify_all(notifications, message):
+    for notification in notifications:
+        notification.send(message)
 
 
+notify_all([EmailNotification(), SMSNotification()], "Server down!")
 
+"""
 
 
 

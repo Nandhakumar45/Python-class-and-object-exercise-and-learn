@@ -151,7 +151,9 @@ Try instantiating `Vehicle()` directly and observe the error.
 
 ---
 
-**5. (Medium)** Create abstract class `Shape` with abstract method `area()` AND a **concrete** (non-abstract) method `describe()` that prints `"This shape has an area of {self.area()}"`. Create `Rectangle` subclass. Notice how the concrete method uses the abstract method internally — this is template-method style abstraction.
+**5. (Medium)** Create abstract class `Shape` with abstract method `area()` AND a **concrete** (non-abstract) method `describe()`
+that prints `"This shape has an area of {self.area()}"`. Create `Rectangle` subclass.
+Notice how the concrete method uses the abstract method internally — this is template-method style abstraction.
 ```
 Expected:
 Rectangle(4, 5).describe() -> "This shape has an area of 20"
@@ -159,7 +161,10 @@ Rectangle(4, 5).describe() -> "This shape has an area of 20"
 
 ---
 
-**6. (Medium-Hard)** Create abstract class `Notification` with abstract method `send(message)`. Create `EmailNotification` and `SMSNotification` subclasses. Then write a function `notify_all(notifications, message)` that loops through a list of different notification objects and calls `send()` on each — demonstrating **polymorphism through abstraction**.
+**6. (Medium-Hard)** Create abstract class `Notification` with abstract method `send(message)`.
+Create `EmailNotification` and `SMSNotification` subclasses.
+Then write a function `notify_all(notifications, message)` that loops through a list of different notification objects and calls `send()`
+ on each — demonstrating **polymorphism through abstraction**.
 ```
 Expected:
 notify_all([EmailNotification(), SMSNotification()], "Server down!")
@@ -169,7 +174,9 @@ notify_all([EmailNotification(), SMSNotification()], "Server down!")
 
 ---
 
-**7. (Hard)** Create abstract class `BankAccount` with abstract method `calculate_interest()`, and concrete methods `deposit(amount)` and `withdraw(amount)` that modify a protected `_balance` attribute (use encapsulation here too). Create `SavingsAccount` (2% interest) and `CurrentAccount` (0% interest, but allows overdraft up to -5000).
+**7. (Hard)** Create abstract class `BankAccount` with abstract method `calculate_interest()`, and concrete methods `deposit(amount)` and `withdraw(amount)`
+that modify a protected `_balance` attribute (use encapsulation here too).
+Create `SavingsAccount` (2% interest) and `CurrentAccount` (0% interest, but allows overdraft up to -5000).
 
 ---
 

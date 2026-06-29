@@ -126,7 +126,8 @@ Cat().sound() -> "Meow!"
 
 ---
 
-**2. (Easy)** Create abstract class `Shape` with abstract method `area()`. Create a `Circle` subclass (takes `radius`) that returns area rounded to 2 decimals using `3.14 * r * r`.
+**2. (Easy)** Create abstract class `Shape` with abstract method `area()`. Create a `Circle` subclass (takes `radius`) that returns
+area rounded to 2 decimals using `3.14 * r * r`.
 ```
 Expected:
 Circle(5).area() -> 78.5
@@ -134,7 +135,8 @@ Circle(5).area() -> 78.5
 
 ---
 
-**3. (Easy-Medium)** Create abstract class `Employee` with abstract method `calculate_salary()`. Create `FullTimeEmployee` (fixed monthly salary) and `Intern` (stipend per day × number of days) subclasses.
+**3. (Easy-Medium)** Create abstract class `Employee` with abstract method `calculate_salary()`.
+Create `FullTimeEmployee` (fixed monthly salary) and `Intern` (stipend per day × number of days) subclasses.
 ```
 Expected:
 FullTimeEmployee(50000).calculate_salary() -> 50000

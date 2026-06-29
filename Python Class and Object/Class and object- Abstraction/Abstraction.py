@@ -51,3 +51,66 @@ cat = Cat()
 cat.sound()
 
 """
+"""
+**2. (Easy)** Create abstract class `Shape` with abstract method `area()`. Create a `Circle` subclass (takes `radius`) that returns
+area rounded to 2 decimals using `3.14 * r * r`.
+```
+Expected:
+Circle(5).area() -> 78.5
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+
+    def area(self):
+        return round(3.14 * self.radius * self.radius, 2)
+
+
+C1 = Circle(5)
+print(C1.area())  # -> 78.5
+
+"""
+"""
+**3. (Easy-Medium)** Create abstract class `Employee` with abstract method `calculate_salary()`.
+Create `FullTimeEmployee` (fixed monthly salary) and `Intern` (stipend per day × number of days) subclasses.
+```
+Expected:
+FullTimeEmployee(50000).calculate_salary() -> 50000
+Intern(500, 20).calculate_salary() -> 10000
+
+
+from abc import ABC, abstractmethod
+
+class Employee(ABC):
+    @abstractmethod
+    def calculate_salary(self):
+        pass
+
+class FullTimeEmployee(Employee):
+    def __init__(self, full):
+        self.full = full
+
+    def calculate_salary(self):
+        return self.full
+
+
+class Intern(Employee):
+    def __init__(self,SPD, NOD):
+        self.SPD = SPD
+        self.NOD = NOD
+    def calculate_salary(self):
+        return self.SPD * self.NOD
+
+f1 = FullTimeEmployee(50000)
+print(f1.calculate_salary())
+I1 = Intern(500, 20)
+print(I1.calculate_salary())
+
+"""

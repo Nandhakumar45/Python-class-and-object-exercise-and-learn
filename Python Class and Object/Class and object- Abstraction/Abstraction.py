@@ -114,3 +114,57 @@ I1 = Intern(500, 20)
 print(I1.calculate_salary())
 
 """
+"""
+# **4. (Medium)** Create abstract class `Vehicle` with **two** abstract methods: `start_engine()` and `fuel_type()`.
+# Create `PetrolCar` and `ElectricCar` subclasses implementing both methods differently.
+# Try instantiating `Vehicle()` directly and observe the error.
+
+from abc import ABC, abstractmethod
+
+class Vehicle(ABC):
+    @abstractmethod
+    def start_engine(self):
+        pass
+
+    @abstractmethod
+    def fuel_type(self):
+        pass
+
+
+class PetrolCar(Vehicle):
+    def start_engine(self):
+        return "Starting petrol engine..."
+
+    def fuel_type(self):
+        return "Petrol"
+
+
+class ElectricCar(Vehicle):
+    def start_engine(self):
+        return "Starting electric motor silently..."
+
+    def fuel_type(self):
+        return "Battery"
+
+
+# Test
+p1 = PetrolCar()
+print(p1.start_engine())   # Starting petrol engine...
+print(p1.fuel_type())      # Petrol
+
+e1 = ElectricCar()
+print(e1.start_engine())   # Starting electric motor silently...
+print(e1.fuel_type())      # Battery
+
+# Try instantiating Vehicle directly
+v = Vehicle()   # ❌ raises TypeError
+
+"""
+
+
+
+
+
+
+
+

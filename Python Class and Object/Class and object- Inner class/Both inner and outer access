@@ -1,0 +1,147 @@
+Let's start with the most basic examples possible.
+
+# 1. Outer Class Accessing Inner Class
+
+```python
+class Outer:
+
+    class Inner:
+        def show(self):
+            print("I am Inner class")
+
+    def access_inner(self):
+        obj = Outer.Inner()   # Create Inner object
+        obj.show()            # Access Inner method
+
+
+o = Outer()
+o.access_inner()
+```
+
+### Output
+
+```text
+I am Inner class
+```
+
+### Flow
+
+```text
+Outer object
+     ↓
+Creates Inner object
+     ↓
+Calls Inner method
+```
+
+---
+
+# 2. Inner Class Accessing Outer Class
+
+```python
+class Outer:
+
+    def show(self):
+        print("I am Outer class")
+
+    class Inner:
+        def __init__(self, outer_obj):
+            self.outer_obj = outer_obj
+
+        def access_outer(self):
+            self.outer_obj.show()
+
+
+o = Outer()
+i = Outer.Inner(o)    # Pass Outer object
+i.access_outer()
+```
+
+### Output
+
+```text
+I am Outer class
+```
+
+### Flow
+
+```text
+Outer object
+     ↓
+Passed to Inner
+     ↓
+Inner calls Outer method
+```
+
+---
+
+# 3. Both Accessing Each Other
+
+```python
+class Outer:
+
+    def outer_method(self):
+        print("Outer Method")
+
+    class Inner:
+        def __init__(self, outer_obj):
+            self.outer_obj = outer_obj
+
+        def inner_method(self):
+            print("Inner Method")
+
+        def access_outer(self):
+            self.outer_obj.outer_method()
+
+    def access_inner(self):
+        obj = Outer.Inner(self)
+        obj.inner_method()
+
+
+o = Outer()
+
+# Outer → Inner
+o.access_inner()
+
+# Inner → Outer
+i = Outer.Inner(o)
+i.access_outer()
+```
+
+### Output
+
+```text
+Inner Method
+Outer Method
+```
+
+---
+
+## Simple Rule to Remember
+
+### Outer → Inner
+
+```python
+obj = Outer.Inner()
+obj.method()
+```
+
+Create an Inner object and use it.
+
+### Inner → Outer
+
+```python
+i = Outer.Inner(outer_obj)
+```
+
+Pass the Outer object to Inner and store it.
+
+Then:
+
+```python
+self.outer_obj.method()
+```
+
+Use the Outer object's methods or properties.
+
+That's the core idea of Python inner and outer classes.

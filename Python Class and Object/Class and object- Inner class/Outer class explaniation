@@ -1,0 +1,24 @@
+Let's start with the most basic examples possible.
+
+1. Outer Class Accessing Inner Class
+class Outer:
+
+    class Inner:
+        def show(self):
+            print("I am Inner class")
+
+    def access_inner(self):
+        obj = Outer.Inner()   # Create Inner object
+        obj.show()            # Access Inner method
+
+
+o = Outer()
+o.access_inner()
+Output
+I am Inner class
+Flow
+Outer object
+     ↓
+Creates Inner object
+     ↓
+Calls Inner method

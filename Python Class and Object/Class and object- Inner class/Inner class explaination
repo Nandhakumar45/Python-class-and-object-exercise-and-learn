@@ -1,0 +1,43 @@
+Great! Now that you understand the basic idea, let's focus only on how the Outer class accesses the Inner class.
+
+Think of it like this
+Outer class = House
+Inner class = Room
+
+Just because a room is defined inside a house:
+
+class House:
+    class Room:
+        pass
+
+doesn't mean the house automatically has a room object.
+
+The house must create a room first.
+
+
+
+2. Inner Class Accessing Outer Class
+class Outer:
+
+    def show(self):
+        print("I am Outer class")
+
+    class Inner:
+        def __init__(self, outer_obj):
+            self.outer_obj = outer_obj
+
+        def access_outer(self):
+            self.outer_obj.show()
+
+
+o = Outer()
+i = Outer.Inner(o)    # Pass Outer object
+i.access_outer()
+Output
+I am Outer class
+Flow
+Outer object
+     ↓
+Passed to Inner
+     ↓
+Inner calls Outer method

@@ -1,0 +1,145 @@
+In Python, a **Boolean** is a data type that represents only **two values**:
+
+* `True`
+* `False`
+
+It is commonly used for decision-making and conditions.
+
+### Example 1: Basic Boolean Values
+
+```python
+a = True
+b = False
+
+print(a)
+print(b)
+```
+
+**Output:**
+
+```python
+True
+False
+```
+
+---
+
+### Example 2: Comparison Operators Return Boolean
+
+```python
+x = 10
+y = 20
+
+print(x > y)
+print(x < y)
+print(x == y)
+```
+
+**Output:**
+
+```python
+False
+True
+False
+```
+
+Explanation:
+
+* `10 > 20` → `False`
+* `10 < 20` → `True`
+* `10 == 20` → `False`
+
+---
+
+### Example 3: Using Boolean in `if` Statement
+
+```python
+age = 18
+
+if age >= 18:
+    print("Eligible to vote")
+else:
+    print("Not eligible to vote")
+```
+
+**Output:**
+
+```python
+Eligible to vote
+```
+
+Here, `age >= 18` evaluates to `True`, so the `if` block executes.
+
+---
+
+### Example 4: `bool()` Function
+
+The `bool()` function converts values to `True` or `False`.
+
+```python
+print(bool(100))
+print(bool("Python"))
+print(bool(""))
+print(bool(0))
+```
+
+**Output:**
+
+```python
+True
+True
+False
+False
+```
+
+---
+
+### Values Evaluated as `False`
+
+Python treats the following as `False`:
+
+```python
+bool(0)      # False
+bool("")     # False
+bool([])     # False
+bool({})     # False
+bool(None)   # False
+```
+
+Everything else is generally `True`.
+
+---
+
+### Real-World Example
+
+```python
+is_logged_in = True
+
+if is_logged_in:
+    print("Welcome User")
+else:
+    print("Please Login")
+```
+
+**Output:**
+
+```python
+Welcome User
+```
+
+### Beginner-Friendly Definition
+
+Think of a Boolean as a **Yes/No**, **On/Off**, or **True/False** switch.
+
+| Real Life | Boolean |
+| --------- | ------- |
+| Yes       | True    |
+| No        | False   |
+| Light ON  | True    |
+| Light OFF | False   |
+| Pass      | True    |
+| Fail      | False   |
+
+For interviews, a simple answer is:
+
+> **Boolean is a Python data type that stores only two values: `True` and `False`. It is mainly used for comparisons and decision-making (`if`, `else`, loops, etc.).**

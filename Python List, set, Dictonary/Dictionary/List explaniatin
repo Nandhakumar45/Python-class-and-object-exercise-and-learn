@@ -762,3 +762,8 @@ Easy way to remember
 insert() → Adds a new item at a specific position, so existing elements shift.
 append() → Adds a new item at the end, so nothing shifts.
 Assignment (mylist[index] = value) → Replaces an existing item, so nothing shifts.
+
+
+Easy way to remember
+append() → Adds one item (even if that item is another list).
+extend() → Adds each item from another iterable one by one.

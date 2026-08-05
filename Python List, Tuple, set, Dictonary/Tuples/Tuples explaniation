@@ -1,0 +1,4 @@
+Tuples when we use the Tuple with index or list with index it always return the first index of the element and stop there.
+
+fruits = ("apple", "banana", "apple", "cherry")
+print(fruits.index("apple"))

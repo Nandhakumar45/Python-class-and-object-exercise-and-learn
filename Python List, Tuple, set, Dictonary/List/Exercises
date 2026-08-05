@@ -1,0 +1,218 @@
+Great idea! Practicing is the best way to learn Python lists. Here are **15 beginner-to-intermediate exercises**. Try solving them yourself without looking at the answers.
+
+### Exercise 1: Create a List
+
+Create a list called `fruits` containing:
+
+* apple
+* banana
+* cherry
+
+Print the list.
+
+---
+
+### Exercise 2: Access Elements
+
+Given:
+
+```python
+numbers = [10, 20, 30, 40, 50]
+```
+
+Print:
+
+* the first element
+* the last element
+* the third element
+
+---
+
+### Exercise 3: Change an Item
+
+Given:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+```
+
+Change `"banana"` to `"orange"` and print the list.
+
+---
+
+### Exercise 4: Add an Item
+
+Given:
+
+```python
+colors = ["red", "green", "blue"]
+```
+
+Add `"yellow"` to the end of the list.
+
+---
+
+### Exercise 5: Insert an Item
+
+Given:
+
+```python
+animals = ["cat", "dog", "rabbit"]
+```
+
+Insert `"lion"` at index `1`.
+
+---
+
+### Exercise 6: Remove an Item
+
+Given:
+
+```python
+cities = ["Delhi", "Mumbai", "Chennai", "Bangalore"]
+```
+
+Remove `"Mumbai"` from the list.
+
+---
+
+### Exercise 7: Remove the Last Item
+
+Given:
+
+```python
+cars = ["BMW", "Audi", "Tesla", "Toyota"]
+```
+
+Remove the last item using `pop()` and print both:
+
+* the removed item
+* the remaining list
+
+---
+
+### Exercise 8: Find the Length
+
+Given:
+
+```python
+students = ["John", "Sara", "Mike", "Emma", "David"]
+```
+
+Print the number of students.
+
+---
+
+### Exercise 9: Check if an Item Exists
+
+Given:
+
+```python
+fruits = ["apple", "banana", "cherry"]
+```
+
+Check whether `"banana"` exists in the list.
+
+If it exists, print:
+
+```
+Found
+```
+
+Otherwise print:
+
+```
+Not Found
+```
+
+---
+
+### Exercise 10: Loop Through a List
+
+Given:
+
+```python
+languages = ["Python", "Java", "C++", "JavaScript"]
+```
+
+Print each language on a separate line using a `for` loop.
+
+---
+
+### Exercise 11: Sum of Numbers
+
+Given:
+
+```python
+numbers = [5, 10, 15, 20, 25]
+```
+
+Find and print the sum of all numbers.
+
+---
+
+### Exercise 12: Find the Largest Number
+
+Given:
+
+```python
+numbers = [23, 45, 12, 89, 34]
+```
+
+Print the largest number.
+
+---
+
+### Exercise 13: Reverse a List
+
+Given:
+
+```python
+letters = ["a", "b", "c", "d", "e"]
+```
+
+Reverse the list and print it.
+
+---
+
+### Exercise 14: Sort a List
+
+Given:
+
+```python
+numbers = [40, 10, 30, 20, 50]
+```
+
+Sort the list:
+
+1. In ascending order
+2. In descending order
+
+---
+
+### Exercise 15: Mini Challenge ⭐
+
+Create a shopping cart.
+
+Start with:
+
+```python
+cart = []
+```
+
+Perform the following operations:
+
+1. Add `"Milk"`
+2. Add `"Bread"`
+3. Add `"Eggs"`
+4. Insert `"Butter"` at index `1`
+5. Remove `"Bread"`
+6. Replace `"Milk"` with `"Cheese"`
+7. Print:
+
+   * Final cart
+   * Number of items
+   * First item
+   * Last item
+
+

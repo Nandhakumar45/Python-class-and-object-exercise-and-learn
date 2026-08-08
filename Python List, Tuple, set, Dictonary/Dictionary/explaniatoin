@@ -1,0 +1,249 @@
+A **dictionary** in Python is a collection that stores data as **key-value pairs**.
+
+Think of it like a real dictionary:
+
+* Word → Meaning
+* Key → Value
+
+For example:
+
+```python
+car = {
+    "brand": "Ford",
+    "model": "Mustang",
+    "year": 2024
+}
+```
+
+Here:
+
+| Key       | Value       |
+| --------- | ----------- |
+| `"brand"` | `"Ford"`    |
+| `"model"` | `"Mustang"` |
+| `"year"`  | `2024`      |
+
+---
+
+## Why use a dictionary?
+
+Imagine storing a student's details.
+
+Using a list:
+
+```python
+student = ["Ravi", 22, "Chennai"]
+```
+
+You have to remember:
+
+```python
+student[0]  # name
+student[1]  # age
+student[2]  # city
+```
+
+This can be confusing.
+
+Using a dictionary:
+
+```python
+student = {
+    "name": "Ravi",
+    "age": 22,
+    "city": "Chennai"
+}
+```
+
+Now you can write:
+
+```python
+student["name"]
+student["age"]
+student["city"]
+```
+
+which is much easier to understand.
+
+---
+
+## Accessing values
+
+```python
+car = {
+    "brand": "Ford",
+    "model": "Mustang"
+}
+
+print(car["brand"])
+```
+
+Output:
+
+```python
+Ford
+```
+
+Notice the key is inside **square brackets**.
+
+---
+
+## Adding a new item
+
+```python
+car["color"] = "Red"
+```
+
+Now:
+
+```python
+print(car)
+```
+
+Output:
+
+```python
+{
+    'brand': 'Ford',
+    'model': 'Mustang',
+    'color': 'Red'
+}
+```
+
+---
+
+## Updating an item
+
+```python
+car["year"] = 2025
+```
+
+If the key already exists, its value is replaced.
+
+---
+
+## Removing an item
+
+```python
+car.pop("model")
+```
+
+Removes the `"model"` key and its value.
+
+---
+
+## Looping through a dictionary
+
+```python
+for key, value in car.items():
+    print(key, value)
+```
+
+Output:
+
+```python
+brand Ford
+year 2025
+color Red
+```
+
+---
+
+## Important characteristics
+
+### 1. Ordered
+
+Python keeps the insertion order.
+
+```python
+person = {
+    "name": "Ravi",
+    "age": 22,
+    "city": "Chennai"
+}
+```
+
+The keys stay in that order.
+
+---
+
+### 2. Mutable (changeable)
+
+You can add, update, or remove items.
+
+```python
+person["age"] = 23
+```
+
+---
+
+### 3. Keys must be unique
+
+```python
+car = {
+    "brand": "Ford",
+    "brand": "BMW"
+}
+
+print(car)
+```
+
+Output:
+
+```python
+{'brand': 'BMW'}
+```
+
+The second value overwrites the first.
+
+---
+
+## Dictionary vs List
+
+### List
+
+```python
+student = ["Ravi", 22]
+```
+
+Access by **index**:
+
+```python
+student[0]
+```
+
+### Dictionary
+
+```python
+student = {
+    "name": "Ravi",
+    "age": 22
+}
+```
+
+Access by **key**:
+
+```python
+student["name"]
+```
+
+---
+
+### Easy memory trick
+
+* **List** → Data by position (`0`, `1`, `2`)
+* **Tuple** → Fixed list
+* **Set** → Unique values only
+* **Dictionary** → Data by **name (key)**
+
+A dictionary is like a locker system:
+
+```python
+{
+    "locker_101": "Ravi",
+    "locker_102": "John",
+    "locker_103": "Priya"
+}
+```
+
+You don't ask for "the second locker"; you ask for a specific locker number (key) and get its value. That's exactly how dictionaries work.

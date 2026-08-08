@@ -1,0 +1,168 @@
+Nice! Since you're learning sets, here are a few practice exercises from easy to slightly challenging.
+
+### Exercise 1: Create a Set
+
+Create a set containing:
+
+```python
+10, 20, 30, 40
+```
+
+Then print it.
+
+---
+
+### Exercise 2: Add an Element
+
+Create:
+
+```python
+numbers = {10, 20, 30}
+```
+
+Add `40` using `add()` and print the set.
+
+Expected result:
+
+```python
+{10, 20, 30, 40}
+```
+
+---
+
+### Exercise 3: Add Multiple Elements
+
+Create:
+
+```python
+numbers = {10, 20}
+```
+
+Add `30`, `40`, and `50` using `update()`.
+
+Print the result.
+
+---
+
+### Exercise 4: Duplicate Values
+
+```python
+numbers = {10, 20, 30}
+```
+
+Add `20` again.
+
+Print the set and explain why the output did not change.
+
+---
+
+### Exercise 5: Remove an Element
+
+```python
+numbers = {10, 20, 30, 40}
+```
+
+Remove `20` using `remove()`.
+
+Print the result.
+
+---
+
+### Exercise 6: Check Membership
+
+```python
+fruits = {"apple", "banana", "cherry"}
+```
+
+Check whether `"banana"` exists in the set.
+
+Expected output:
+
+```python
+Found
+```
+
+---
+
+### Exercise 7: Find Common Elements
+
+```python
+set1 = {10, 20, 30, 40}
+set2 = {30, 40, 50, 60}
+```
+
+Find the common elements using `intersection()`.
+
+Expected result:
+
+```python
+{30, 40}
+```
+
+---
+
+### Exercise 8: Find Unique Elements
+
+```python
+set1 = {10, 20, 30, 40}
+set2 = {30, 40, 50, 60}
+```
+
+Find elements present in `set1` but not in `set2`.
+
+Expected result:
+
+```python
+{10, 20}
+```
+
+---
+
+### Exercise 9: Union of Sets
+
+```python
+set1 = {1, 2, 3}
+set2 = {3, 4, 5}
+```
+
+Combine both sets using `union()`.
+
+Expected result:
+
+```python
+{1, 2, 3, 4, 5}
+```
+
+---
+
+### Exercise 10: Remove Duplicates from a List
+
+Given:
+
+```python
+numbers = [10, 20, 10, 30, 20, 40, 30]
+```
+
+Convert it into a set and print the unique values.
+
+Expected result:
+
+```python
+{10, 20, 30, 40}
+```
+
+A very common interview question is:
+
+> "How do you remove duplicates from a list in Python?"
+
+The answer is often:
+
+```python
+numbers = [10, 20, 10, 30, 20]
+unique_numbers = set(numbers)
+
+print(unique_numbers)
+```
+
+Try Exercises 1–5 first, and I'll review your code like a Python interviewer.
+-

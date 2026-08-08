@@ -1,0 +1,21 @@
+A Python set is a collection of unique, unordered elements used when you want to remove duplicates
+and perform fast membership checks.
+
+
+Note:
+      add method only one elements, not multiple items
+      thisset = {"apple", "banana", "cherry"}
+      thisset.add("orange")
+      print(thisset)
+
+second problem answer
+| Method      | If item exists | If item does not exist |
+| ----------- | -------------- | ---------------------- |
+| `remove()`  | Removes it     | ❌ Raises `KeyError`    |
+| `discard()` | Removes it     | ✅ Does nothing         |
+
+
+Intersection, union, difference()
+intersection() → Common items → AND
+union() → All items → OR
+difference() → Only mine

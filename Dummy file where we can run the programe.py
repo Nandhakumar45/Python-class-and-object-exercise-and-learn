@@ -1,10 +1,6 @@
-
-
-# Create the dictionary
-car = {
-"brand" : "Ford",
-"model" : "Mustang",
-"year" :  2024
+student = {
+    "name": "Ravi",
+    "age": 22,
+    "city": "Chennai"
 }
-# Print the model
-print(car[model])
+print.dict_keys(['name', 'age', 'city'])

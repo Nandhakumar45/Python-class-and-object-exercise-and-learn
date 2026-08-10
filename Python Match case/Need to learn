@@ -1,0 +1,469 @@
+Yes. Overall, you're doing **well with the basic `match-case` idea**. Your first several exercises show that you understand the core concept. The main areas to improve are **Python syntax, indentation, and especially pattern-matching syntax**.
+
+Let's go through them one by one.
+
+### #1 — Day
+
+Your logic is **correct**:
+
+```python
+day = 3
+
+match day:
+    case 1:
+        print("Monday")
+    case 2:
+        print("Tuesday")
+    case 3:
+        print("Wednesday")
+    case 4:
+        print("Thursday")
+    case 5:
+        print("Friday")
+    case _:
+        print("Invalid day")
+```
+
+✅ You understand:
+
+* `match day`
+* `case` comparisons
+* `_` as the default case
+
+**Minor improvement:** `Wednesday` should normally be capitalized.
+
+---
+
+### #2 — Color
+
+This is **completely correct**:
+
+```python
+color = "red"
+
+match color:
+    case "red":
+        print("Stop")
+    case "yellow":
+        print("Get ready")
+    case "green":
+        print("Go")
+    case _:
+        print("Invalid color")
+```
+
+✅ Excellent.
+
+And importantly, you correctly used:
+
+```python
+case "red":
+```
+
+instead of:
+
+```python
+case red:
+```
+
+That's something we discussed earlier.
+
+---
+
+### #3 — Calculator
+
+Your idea is correct:
+
+```python
+a = 10
+b = 5
+operator = "+"
+
+match operator:
+    case "+":
+        print(a + b)
+    case "-":
+        print(a - b)
+    case "*":
+        print(a * b)
+    case "/":
+        print(a / b)
+```
+
+✅ Good understanding.
+
+You have a small typo in your submitted code:
+
+```python
+case "*":*
+```
+
+The extra `*` should be removed.
+
+I'd also recommend adding a default:
+
+```python
+case _:
+    print("Invalid operator")
+```
+
+---
+
+### #4 — Menu
+
+Also **correct**:
+
+```python
+choice = 2
+
+match choice:
+    case 1:
+        print("Add")
+    case 2:
+        print("View")
+    case 3:
+        print("Update")
+    case 4:
+        print("Delete")
+    case _:
+        print("Invalid choice")
+```
+
+✅ Good.
+
+---
+
+### #5 — Month
+
+This one needs improvement.
+
+You wrote:
+
+```python
+month = 4
+
+match month:
+    if 1 month 12:
+        case 1:
+            print("January")
+```
+
+There are two problems.
+
+First, you **cannot put `if` directly under `match`** like that.
+
+Second:
+
+```python
+if 1 month 12:
+```
+
+isn't valid Python syntax.
+
+But actually, you don't need that `if` at all.
+
+Just do:
+
+```python
+month = 4
+
+match month:
+    case 1:
+        print("January")
+    case 2:
+        print("February")
+    case 3:
+        print("March")
+    case 4:
+        print("April")
+    case 5:
+        print("May")
+    case 6:
+        print("June")
+    case 7:
+        print("July")
+    case 8:
+        print("August")
+    case 9:
+        print("September")
+    case 10:
+        print("October")
+    case 11:
+        print("November")
+    case 12:
+        print("December")
+    case _:
+        print("Invalid month")
+```
+
+The `case _` already handles values outside 1–12.
+
+---
+
+### #6 — Grade
+
+This is **correct**:
+
+```python
+grade = "B"
+
+match grade:
+    case "A":
+        print("Excellent")
+    case "B":
+        print("Good")
+    case "C":
+        print("Average")
+    case "D":
+        print("Needs improvement")
+    case "F":
+        print("Failed")
+    case _:
+        print("Invalid grade")
+```
+
+✅ Very good.
+
+---
+
+### #7 — ATM
+
+Your logic is correct:
+
+```python
+option = 3
+
+match option:
+    case 1:
+        print("Check Balance")
+    case 2:
+        print("Deposit")
+    case 3:
+        print("Withdraw")
+    case 4:
+        print("Exit")
+```
+
+I'd add:
+
+```python
+case _:
+    print("Invalid option")
+```
+
+That's a good habit when using `match`.
+
+---
+
+### #8 — Animal
+
+Also **correct**:
+
+```python
+animal = "dog"
+
+match animal:
+    case "dog":
+        print("Woof")
+    case "cat":
+        print("Meow")
+    case "cow":
+        print("Moo")
+    case "lion":
+        print("Roar")
+    case _:
+        print("Unknown animal")
+```
+
+✅ Good.
+
+---
+
+## #9 — Weekend
+
+This is where you're starting to encounter **real `match` pattern matching**.
+
+You wrote:
+
+```python
+case "Saturday" and "Sunday":
+```
+
+❌ That's not how you match two possible values.
+
+You want:
+
+```python
+case "Saturday" | "Sunday":
+    print("Weekend")
+```
+
+The `|` means **OR** in a pattern.
+
+So:
+
+```python
+day = "Saturday"
+
+match day:
+    case "Saturday" | "Sunday":
+        print("Weekend")
+    case "Monday" | "Tuesday" | "Wednesday" | "Thursday" | "Friday":
+        print("Weekday")
+    case _:
+        print("Invalid day")
+```
+
+This is a very useful `match-case` feature.
+
+Think:
+
+```text
+"Saturday" OR "Sunday" → Weekend
+```
+
+The Python pattern syntax is:
+
+```python
+case "Saturday" | "Sunday":
+```
+
+---
+
+## #10 — Number ranges
+
+This is your biggest area for improvement.
+
+You wrote:
+
+```python
+case number = 1, 2, 3:
+```
+
+❌ This isn't valid `match` syntax.
+
+You also don't need to write `number =`.
+
+Remember:
+
+```python
+match number:
+```
+
+means Python already knows that **`number` is the value we're matching**.
+
+### If you want 1, 2, or 3:
+
+Use:
+
+```python
+case 1 | 2 | 3:
+    print("Small")
+```
+
+So:
+
+```python
+number = 2
+
+match number:
+    case 1 | 2 | 3:
+        print("Small")
+
+    case 4 | 5 | 6:
+        print("Medium")
+
+    case 7 | 8 | 9 | 10:
+        print("Large")
+
+    case _:
+        print("Out of range")
+```
+
+For `number = 2`, the output is:
+
+```text
+Small
+```
+
+### Important distinction
+
+Don't confuse these:
+
+```python
+case 1 | 2 | 3:
+```
+
+means:
+
+> 1 OR 2 OR 3
+
+Whereas:
+
+```python
+case number:
+```
+
+is a **pattern variable**, which is something different.
+
+---
+
+# Your overall progress
+
+I'd rate your understanding around **7.5/10** for this stage.
+
+You clearly understand the basic structure:
+
+```python
+match value:
+    case something:
+        ...
+    case something_else:
+        ...
+    case _:
+        ...
+```
+
+### You are already comfortable with:
+
+✅ `match`
+
+✅ `case`
+
+✅ String matching
+
+✅ Integer matching
+
+✅ Default case `_`
+
+✅ Multiple independent cases
+
+### Focus next on:
+
+**1. Multiple values**
+
+```python
+case 1 | 2 | 3:
+```
+
+**2. Pattern matching**
+
+This is where `match-case` becomes more powerful than a simple `switch`.
+
+**3. Conditions with `if` inside a case**
+
+For example:
+
+```python
+age = 20
+
+match age:
+    case x if x >= 18:
+        print("Adult")
+    case _:
+        print("Minor")
+```
+
+But **don't jump there yet**. I'd first practice `|` because your #9 and #10 show that this is the next concept you need to nail down.
+
+And honestly, your mistakes are good mistakes—they show you're trying to reason about *how* `match` works rather than just memorizing syntax.

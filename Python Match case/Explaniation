@@ -1,0 +1,52 @@
+### Match-case in Python — Definition
+
+**`match-case`** is a Python control-flow statement used to **compare a value against multiple possible patterns and execute the code for the first matching pattern**.
+
+It was introduced in **Python 3.10**.
+
+### Basic syntax
+
+```python
+match value:
+    case pattern1:
+        # code
+    case pattern2:
+        # code
+    case _:
+        # default code
+```
+
+For example:
+
+```python
+number = 2
+
+match number:
+    case 1:
+        print("One")
+    case 2:
+        print("Two")
+    case 3:
+        print("Three")
+    case _:
+        print("Other")
+```
+
+Output:
+
+```text
+Two
+```
+
+Here:
+
+* `match number` → tells Python what value to check.
+* `case 1` → checks whether the value is `1`.
+* `case 2` → checks whether the value is `2`.
+* `case _` → matches anything that didn't match the previous cases.
+
+**Simple definition to remember:**
+
+> **Match-case is used to select one block of code by matching a value against different cases.**
+
+It's similar to a **`switch-case`** statement found in other programming languages.

@@ -1,0 +1,212 @@
+Absolutely. Since you're just learning `match-case`, let's go from **easy → intermediate**. Try solving them yourself first without looking up the answers.
+
+### 1. Day of the Week
+
+Create a variable:
+
+```python
+day = 3
+```
+
+Use `match-case` to print:
+
+```text
+Monday
+Tuesday
+Wednesday
+Thursday
+Friday
+```
+
+Assume `1 = Monday` and `5 = Friday`. For anything else, print `"Invalid day"`.
+
+---
+
+### 2. Traffic Light
+
+```python
+color = "red"
+```
+
+Use `match-case`:
+
+* `"red"` → `Stop`
+* `"yellow"` → `Get ready`
+* `"green"` → `Go`
+* anything else → `Invalid color`
+
+---
+
+### 3. Calculator
+
+Create:
+
+```python
+a = 10
+b = 5
+operator = "+"
+```
+
+Use `match-case` for:
+
+* `"+"` → addition
+* `"-"` → subtraction
+* `"*"` → multiplication
+* `"/"` → division
+
+Expected output:
+
+```text
+15
+```
+
+---
+
+### 4. Simple Menu
+
+```python
+choice = 2
+```
+
+Use `match-case`:
+
+```text
+1 → Add
+2 → View
+3 → Update
+4 → Delete
+```
+
+For any other number:
+
+```text
+Invalid choice
+```
+
+---
+
+### 5. Month
+
+```python
+month = 4
+```
+
+Use `match-case` to print the month:
+
+```text
+1 → January
+2 → February
+3 → March
+4 → April
+...
+12 → December
+```
+
+Anything outside `1–12` should print `"Invalid month"`.
+
+---
+
+### 6. Grade
+
+```python
+grade = "B"
+```
+
+Use `match-case`:
+
+* `"A"` → `Excellent`
+* `"B"` → `Good`
+* `"C"` → `Average`
+* `"D"` → `Needs improvement`
+* `"F"` → `Failed`
+* anything else → `Invalid grade`
+
+---
+
+### 7. Simple ATM
+
+```python
+option = 3
+```
+
+Use `match-case`:
+
+* `1` → `Check Balance`
+* `2` → `Deposit`
+* `3` → `Withdraw`
+* `4` → `Exit`
+
+Expected output:
+
+```text
+Withdraw
+```
+
+---
+
+### 8. Animal Sounds
+
+```python
+animal = "dog"
+```
+
+Use `match-case`:
+
+* `"dog"` → `Woof`
+* `"cat"` → `Meow`
+* `"cow"` → `Moo`
+* `"lion"` → `Roar`
+* anything else → `Unknown animal`
+
+---
+
+### 9. Combine Multiple Cases
+
+This one is slightly more interesting.
+
+```python
+day = "Saturday"
+```
+
+Use `match-case` so that:
+
+* `"Saturday"` and `"Sunday"` → `Weekend`
+* `"Monday"` through `"Friday"` → `Weekday`
+* anything else → `Invalid day`
+
+**Hint:** You can put multiple values in one case:
+
+```python
+case "Saturday" | "Sunday":
+```
+
+---
+
+### 10. Number Classification — Challenge
+
+```python
+number = 2
+```
+
+Use `match-case` to classify:
+
+* `1`, `2`, `3` → `"Small"`
+* `4`, `5`, `6` → `"Medium"`
+* `7`, `8`, `9`, `10` → `"Large"`
+* anything else → `"Out of range"`
+
+**Hint:**
+
+```python
+case 1 | 2 | 3:
+```
+
+---
+
+### ⭐ Recommended order
+
+Do **1 → 2 → 3 → 4 → 6 → 7 → 8 → 5 → 9 → 10**.
+
+For your current level, I'd especially recommend **Exercise 3 (calculator)** because it shows you a very practical use of `match-case`.
+
+Try **Exercise 1** first and send me your code. I'll check it without immediately giving you the answer.

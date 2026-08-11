@@ -113,7 +113,7 @@ match animal:
 day = "Saturday"
 
 match day:
-    case "Saturday" and "Sunday":
+    case "Saturday" | "Sunday":
         print("Weekend")
     case "Monday":
         print("Weekday")
@@ -128,22 +128,16 @@ match day:
     case _:
         print("Invalid day")
 
-number = 2
-
-match number:
-    case number = 1 , 2, 3:
-        print("small")
-
-    case number = 4, 5, 6:
-        print("Medium")
-
-    case number = 7, 8, 9, 10
-        print("Large")
-
+age = 16
+match age:
+    case x if x >=18:
+        print("Eligible for vote")
     case _:
-        print("Out of range")
+        print("Not eligible")
 
-
+numbers = -5
+match numbers:
+    case x
 
 
 

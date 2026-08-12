@@ -135,9 +135,7 @@ match age:
     case _:
         print("Not eligible")
 
-numbers = -5
-match numbers:
-    case x
+
 
 
 

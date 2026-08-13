@@ -1,6 +1,4 @@
-student = {
-    "name": "Ravi",
-    "age": 22,
-    "city": "Chennai"
-}
-print.dict_keys(['name', 'age', 'city'])
+
+
+for i in range(3, 50, 3):
+    print(i)

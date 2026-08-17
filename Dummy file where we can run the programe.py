@@ -1,16 +1,10 @@
-a = 0
-b = 5
+x = 15
 
-if a and b:
+if x > 10:
     print("A")
-elif a or b:
+if x > 20:
     print("B")
-elif not a:
+elif x > 10:
     print("C")
 else:
     print("D")
-
-#Let say if the value inside the list is True?
-
-x = []
-print(x)

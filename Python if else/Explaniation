@@ -429,3 +429,109 @@ Output:
 2
 
 ✅ Correct answer: 1 and 2
+
+*************************************************************************************************
+Important one need to remember in if else condition.
+
+Yes — and the distinction is **whether the conditions are in the same chain or are separate statements**.
+
+Think of it this way:
+
+### Case 1 — One single chain
+
+```python
+if condition1:
+    print("A")
+elif condition2:
+    print("B")
+elif condition3:
+    print("C")
+else:
+    print("D")
+```
+
+If `condition1` is **True**, Python prints `A` and **skips every remaining `elif` and `else` in that chain**.
+
+So even if you had 100 `elif`s, they would all be skipped.
+
+---
+
+### Case 2 — Separate `if` statements
+
+```python
+if condition1:
+    print("A")
+
+if condition2:
+    print("B")
+elif condition3:
+    print("C")
+else:
+    print("D")
+```
+
+Now there are **two separate decision blocks**.
+
+Python does:
+
+**Block 1:**
+
+```text
+condition1 → True
+      ↓
+   print A
+      ↓
+Block 1 finished
+```
+
+Then Python moves to **Block 2**:
+
+```text
+condition2 → False
+      ↓
+condition3 → True
+      ↓
+   print C
+```
+
+So you get:
+
+```text
+A
+C
+```
+
+### 🔑 The rule
+
+Don't think:
+
+> "Once Python finds a True condition, it stops checking all conditions."
+
+Instead think:
+
+> **"Once Python finds a True condition, it stops checking the rest of THAT `if/elif/else` chain."**
+
+That's the crucial difference.
+
+So even with **100 conditions**, if they're all:
+
+```python
+if ...
+elif ...
+elif ...
+elif ...
+```
+
+only one branch runs.
+
+But if you have:
+
+```python
+if ...
+
+if ...
+
+if ...
+```
+
+each `if` is evaluated independently.

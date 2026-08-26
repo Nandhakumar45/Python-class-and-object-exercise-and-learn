@@ -1,41 +1,51 @@
-#You have to learn what is the difference between module operator and % operator
-
-# have to work on count
-
-word = "banana"
 count = 0
+for count in range(0, 5):
+    count +=1
+    print(count)
+count = 0
+for count in range(0, 10):
+    count +=1
+    print(count)
 
-for character in word:
+fruits = ["apple", "banana", "orange"]
+for count in fruits:
+    print(len(count))
+
+word = "hello"
+print(len(word))
+
+count = 0
+for count in range(1, 5):
     count += 1
+    if count > 3:
+        print(count)
 
-print(count)
-
-word = "banana"
 count = 0
-
-for character in word:
-    count += 1
-
-print(count)
-
-word = "programming"
-vowels = "aeiou"
-count = 0
-
-for character in word:
-    if character in vowels:
+for count in range(1, 10):
+    if count % 2:
         count += 1
+        print(count)
 
-print(count)
+word = "banana"
+for count in word:
+    if count == "a":
+        print(len(count))
 
+numbers = [2, 7, 4, 9, 1, 8]
 
-#Find the largest numbers
-numbers = [10, 25, 8, 99, 45]
+for count in numbers:
+    if count < 5:
+        count += 1
+        print(count)
 
-largest = numbers[0]
+fruits = ["apple", "banana", "apple", "orange", "apple"]
+for count in fruits:
+    if count == "apple":
+        count += 1
+        print(count)
 
-for number in numbers:
-    if number > largest:
-        largest = number
+for count in range(1, 21):
+    if count % 5:
+        count += 1
+        print(count)
 
-print(largest)

@@ -1,14 +1,9 @@
-numbers = [10, 20, 30, 40, 50]
 try:
-    index = int(input(f"Please enter a index:"))
-    value = numbers[index]
-    print(value)
+    x = 10 / 2
+    print("Try successful")
 
-except ValueError:
-    print("Invalid Input")
+except ZeroDivisionError:
+    print("Error")
 
-except IndexError:
-    print("Invalid Index")
-
-else:
-    print("Successfully retrieved the value")
+finally:
+    print("Finally")

@@ -1,0 +1,59 @@
+File Handling and four main topics:
+
+Python File Handling
+Python Read Files
+Python Write/Create Files
+Python Delete Files
+
+I'll explain them step by step, including each line of code and why it is used.
+
+1. Python File Handling
+
+File handling means using Python to work with files stored on your computer.
+
+For example, Python can:
+
+Create a file
+Open a file
+Read a file
+Write data to a file
+Add data to a file
+Delete a file
+Close a file
+
+A simple example:
+
+file = open("test.txt", "r")
+
+Let's understand this line by line.
+
+open()
+open("test.txt", "r")
+
+open() is a built-in Python function used to open a file.
+
+"test.txt"
+"test.txt"
+
+This is the file name.
+
+Python will look for a file called:
+
+test.txt
+
+in the current working directory.
+
+"r"
+"r"
+
+This is the mode.
+
+r means read.
+
+So:
+
+open("test.txt", "r")
+
+means:
+
+Open test.txt for reading.

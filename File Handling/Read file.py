@@ -21,3 +21,4 @@ file = open(r"C:\Users\320287287\OneDrive - Philips\Desktop\File Handling\Read\H
 content = file.read()
 print(content)
 file.close()
+

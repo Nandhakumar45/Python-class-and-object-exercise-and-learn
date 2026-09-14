@@ -1,0 +1,113 @@
+A simple and accurate definition:
+
+> **`write()` is a file method used to write data (text) into a file.**
+
+### Syntax
+
+```python
+file.write(data)
+```
+
+### Example
+
+```python
+file = open("test.txt", "w")
+
+file.write("Hello Python")
+
+file.close()
+```
+
+After execution, the file contains:
+
+```text
+Hello Python
+```
+
+### Key Points
+
+* `write()` writes text to a file.
+* The file must be opened in a writable mode (`"w"`, `"a"`, or `"x"`).
+* `write()` does **not** automatically move to a new line. Use `\n` if you want the next text on a new line.
+* In `"w"` mode, existing file content is overwritten.
+
+A good one-line definition for your notes:
+
+```python
+file.write()   # Writes data (text) into a file
+```
+
+********************************************************************************
+Note:
+     If the file already contains data and you open it with "w" mode, Python will erase all existing content first, then write the new content.
+
+***********************************************************************************
+Important to remember
+
+file.write("Apple\n")                 # One string
+
+file.writelines(["Apple\n", "Banana\n"])  # Multiple strings
+
+***********************************************************************************
+
+Sure, Nandha. Here are two simple programs so you can clearly understand the difference between **`write()`** and **`writelines()`**.
+
+### 1. `write()` — Write one string
+
+```python
+file = open("Write.txt", "w")
+
+file.write("My name is Nandha\n")
+file.write("I am learning Python\n")
+file.write("I am learning File Handling\n")
+
+file.close()
+```
+
+**Output inside `Write.txt`:**
+
+```text
+My name is Nandha
+I am learning Python
+I am learning File Handling
+```
+
+Here, we call `write()` **three times**, one string at a time.
+
+---
+
+### 2. `writelines()` — Write multiple strings
+
+```python
+file = open("Write.txt", "w")
+
+lines = [
+    "My name is Nandha\n",
+    "I am learning Python\n",
+    "I am learning File Handling\n"
+]
+
+file.writelines(lines)
+
+file.close()
+```
+
+**Output inside `Write.txt`:**
+
+```text
+My name is Nandha
+I am learning Python
+I am learning File Handling
+```
+
+Here, we create a **list of strings** and give the entire list to `writelines()`.
+
+### Easy way to remember
+
+```text
+write()       → one string at a time
+writelines()  → multiple strings (usually a list)
+```
+
+⚠️ Remember: **`writelines()` does NOT automatically add `\n`**. If you want each item on a separate line, you need to include `\n` yourself.
+**********************************

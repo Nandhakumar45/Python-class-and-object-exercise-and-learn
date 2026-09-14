@@ -57,3 +57,131 @@ open("test.txt", "r")
 means:
 
 Open test.txt for reading.
+
+
+
+**********************************************************************************************************************
+You're very close. Here is a more accurate version:
+
+```python
+file.read()         # Reads the entire file as a single string
+
+file.readline()     # Reads one line at a time (the next line from the current position)
+
+file.readlines()    # Reads all remaining lines and returns them as a list
+```
+
+### Example
+
+Suppose the file contains:
+
+```text
+Apple
+Banana
+Orange
+Mango
+```
+
+### `read()`
+
+```python
+content = file.read()
+print(content)
+```
+
+Output:
+
+```text
+Apple
+Banana
+Orange
+Mango
+```
+
+Type:
+
+```python
+<class 'str'>
+```
+
+---
+
+### `readline()`
+
+```python
+content = file.readline()
+print(content)
+```
+
+Output:
+
+```text
+Apple
+```
+
+Type:
+
+```python
+<class 'str'>
+```
+
+If you call it again:
+
+```python
+print(file.readline())
+```
+
+Output:
+
+```text
+Banana
+```
+
+---
+
+### `readlines()`
+
+```python
+content = file.readlines()
+print(content)
+```
+
+Output:
+
+```python
+['Apple\n', 'Banana\n', 'Orange\n', 'Mango']
+```
+
+Type:
+
+```python
+<class 'list'>
+```
+
+### One improvement to your note
+
+Instead of:
+
+```python
+file.readline()   # It reads first line in the file
+```
+
+Write:
+
+```python
+file.readline()   # Reads one line at a time
+```
+
+Because if you call `readline()` multiple times, it reads the next line each time, not always the first line.
+
+**Score: 9/10** ✅
+
+You understand the basic difference. The main thing to remember is:
+
+| Function      | Returns              |
+| ------------- | -------------------- |
+| `read()`      | Entire file → String |
+| `readline()`  | One line → String    |
+| `readlines()` | All lines → List     |
+
+**********************************************************************************************************************

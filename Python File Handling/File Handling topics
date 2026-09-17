@@ -1,0 +1,13 @@
+In Python file handling, the open() function has several modes. The most important ones are r, w, a, and x.
+
+Main file modes
+Mode	Name	What it does
+"r"	Read	Reads an existing file
+"w"	Write	Writes to a file; overwrites existing content
+"a"	Append	Adds content to the end of the file
+"x"	Create	Creates a new file; error if it already exists
+Read + Write combinations
+Mode	Meaning
+"r+"	Read + write; file must already exist
+"w+"	Read + write; overwrites the file
+"a+"	Read + append; creates file if it doesn't exist

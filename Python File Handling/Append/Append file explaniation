@@ -1,0 +1,4 @@
+Append mode is used to add new content to an existing file without deleting the content already there and Adds content
+to the end of the file.
+
+You use "a" as the file mode in the open() function.

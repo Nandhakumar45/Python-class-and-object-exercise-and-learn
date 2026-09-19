@@ -1,0 +1,10 @@
+"r+" as "open an existing file for both reading and writing.". "r+" = Read + Write, but the file must already exist.
+
+Example
+    Suppose test.txt already contains:
+    "Hello Python"
+    You can do:
+    with open(r"C:\Users\...\test.txt", "r+") as file:
+        data = file.read()
+        print(data)
+        file.write("I am learning Python.")

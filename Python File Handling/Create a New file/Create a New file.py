@@ -20,8 +20,7 @@ with open (r"C:\Users\320287287\OneDrive - Philips\Desktop\File Handling\Read\ex
     numbers = ["10\n", "20\n", "30\n", "40\n", "50\n"]
     file.writelines(numbers)
 #6
-for x in range(1, 3):
-    with open(r"C:\Users\320287287\OneDrive - Philips\Desktop\File Handling\Read\exercise6.txt", "x") as file:
+with open(r"C:\Users\320287287\OneDrive - Philips\Desktop\File Handling\Read\exercise6.txt", "x") as file:
         file.write("I ran one time")
 #7
 try:

@@ -1,0 +1,50 @@
+1. What does "x" mean?
+
+When you open a file using "x", Python tries to create a brand-new file.
+
+with open("newfile.txt", "x") as file:
+    file.write("I am learning Python.")
+What happens?
+
+If newfile.txt does not exist, Python creates it and writes the text.
+
+If newfile.txt already exists, Python raises a FileExistsError.
+
+Python does not overwrite the existing file.
+
+2. Example: Creating a new file
+
+Suppose you have a folder named File Handling.
+
+File Handling
+
+example.txt
+
+Doesn't exist
+
+Python code
+
+with open("example.txt", "x") as file:
+    file.write("Hello, Python!")
+
+New file created successfully
+
+example.txt
+
+Created
+
+The file will contain:
+
+Hello, Python!
+3. What if the file already exists?
+
+Suppose you run the same code again:
+
+with open("example.txt", "x") as file:
+    file.write("Another text")
+
+Python will produce this error:
+
+FileExistsError: [Errno 17] File exists: 'example.txt'
+
+Why? Because "x" is designed to create a new file and prevent accidental overwriting.

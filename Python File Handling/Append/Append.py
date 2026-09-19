@@ -42,3 +42,4 @@ while True:
     if name == "exit":
         print("I exit from the condition")
         break
+

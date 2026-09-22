@@ -1,0 +1,16 @@
+"a+" Mode — Easy Explanation
+What does "append" mean?
+
+Append = add to the end without deleting existing data
+Think of a file as a notebook.
+
+When you use:
+
+open("file.txt", "a+")
+
+Python does 3 things:
+
+✅ Opens the file for reading
+✅ Opens the file for writing
+✅ Adds new data at the end of the file (append)
+✅ Creates the file if it doesn't already exist

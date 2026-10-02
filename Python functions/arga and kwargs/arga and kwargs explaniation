@@ -1,0 +1,6 @@
+| Feature   | `*args`              | `**kwargs`                  |
+| --------- | -------------------- | --------------------------- |
+| Accepts   | Positional arguments | Keyword arguments           |
+| Stores as | Tuple                | Dictionary                  |
+| Symbol    | `*`                  | `**`                        |
+| Example   | `func(10, 20, 30)`   | `func(name="John", age=25)` |

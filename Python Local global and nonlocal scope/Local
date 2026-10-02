@@ -1,0 +1,69 @@
+Local Variable in Python
+
+A local variable is a variable that is created inside a function or method and can only be used within that function or method.
+
+Example 1: Local Variable in a Function
+def greet():
+    name = "Nandha"   # Local variable
+    print(name)
+
+greet()
+
+Output:
+
+Nandha
+
+Here, name exists only inside greet().
+
+If you try:
+
+print(name)
+
+Output:
+
+NameError: name 'name' is not defined
+
+because name is local to greet().
+
+Example 2: Local Variable in a Method
+class Student:
+    def display(self):
+        age = 27    # Local variable
+        print(age)
+
+s = Student()
+s.display()
+
+Output:
+
+27
+
+age is local to the display() method.
+
+Why Use Local Variables?
+Temporary storage for calculations.
+Prevents accidental modification of variables elsewhere.
+Makes functions independent and reusable.
+
+Example:
+
+def add():
+    a = 10
+    b = 20
+    total = a + b
+    print(total)
+
+add()
+
+a, b, and total are all local variables.
+
+Lifetime of a Local Variable
+def test():
+    x = 100
+    print(x)
+
+test()
+x is created when test() starts.
+x is destroyed when test() finishes.
+
+You can think of a local variable as a temporary worker hired only for that function call. Once the function finishes, the worker leaves.

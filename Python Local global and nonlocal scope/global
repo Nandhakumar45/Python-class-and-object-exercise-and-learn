@@ -1,0 +1,75 @@
+### Global Variable — Definition
+
+A **global variable** is a variable that is created **outside of a function** and can generally be
+**accessed from anywhere in the same Python module/file**.
+
+###########################################
+Global variable
+      ↓
+Can be accessed by functions
+      ↓
+Can be accessed by methods
+      ↓
+Can be accessed by other code in the module
+#############################################
+
+### Example
+
+```python
+name = "Nandha"   # Global variable
+
+def student():
+    print(name)
+
+student()
+print(name)
+```
+
+**Output:**
+
+```text
+Nandha
+Nandha
+```
+
+Here:
+
+```python
+name = "Nandha"
+```
+
+is a **global variable** because it is defined outside the function.
+
+### Simple difference
+
+```text
+Local variable  → created inside a function
+Global variable → created outside a function
+```
+
+**Important:** You can **read** a global variable inside a function without using `global`.
+
+```python
+x = 10
+
+def test():
+    print(x)    # Reading global variable
+
+test()
+```
+
+But if you want to **modify** the global variable inside the function, you normally need the `global` keyword.
+We'll practice that next.
+
+count = 10
+def test():
+    global count
+    count = 20
+    print(count)
+test()
+print(count)
+
+You got it. When you declare a variable as global inside a function, any assignment to that variable affects the original global variable outside the function.
+So, both inside and outside the function, you’re working with the same variable.
+If you don’t use the global keyword, then the variable inside the function stays local, and the global variable remains unchanged.
+So, yes—when you use global, the outside variable is updated, and any print or access will reflect that new value

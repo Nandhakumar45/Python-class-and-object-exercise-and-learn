@@ -1,0 +1,14 @@
+What is Nonlocal Scope?
+
+A nonlocal variable is a variable that belongs to an outer function, and an inner (nested) function wants to use or modify it.
+
+Example 1: Reading a nonlocal variable
+def outer():
+    x = 10  # Variable in outer function
+
+    def inner():
+        print(x)  # Accessing outer variable
+
+    inner()
+
+outer()

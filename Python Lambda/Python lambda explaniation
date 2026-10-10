@@ -1,0 +1,137 @@
+A lambda function is a small anonymous function.
+A lambda function can take any number of arguments, but can only have one expression
+lambda arguments: expression
+
+Ex:
+
+add = lambda a, b: a + b
+
+print(add(10, 20))
+
+lambda a, b    :    a + b
+   ↑ inputs         ↑ expression/result
+
+use of normal function and lambda function
+The main difference is that normal functions are suitable for reusable and complex logic,
+while lambda functions are useful for short, simple operations.
+
+
+Exercises
+
+Here are 10 Python lambda exercises, arranged from beginner to intermediate level. Try writing the code yourself without looking up the answers.
+
+## Level 1: Beginner
+
+Exercise 1: Add two numbers
+
+Create a lambda function that accepts two numbers and returns their sum.
+
+- Inputs: `10, 20`
+- Expected output: `30`
+
+Exercise 2: Square a number
+
+Create a lambda function that accepts one number and returns its square.
+
+- Input: `6`
+- Expected output: `36`
+
+Exercise 3: Check even or odd
+
+Create a lambda function that checks whether a number is even or odd.
+
+- Input: `7`
+- Expected output: `"Odd"`
+- Hint: Use the modulo operator `%` and a conditional expression.
+
+Exercise 4: Find the greater number
+
+Create a lambda function that accepts two numbers and returns the greater number.
+
+- Inputs: `15, 25`
+- Expected output: `25`
+
+Exercise 5: Convert Celsius to Fahrenheit
+
+Create a lambda function that converts Celsius to Fahrenheit using this formula:
+
+\\[ F = (C \times 9/5) + 32 \\]
+
+- Input: `30`
+- Expected output: `86.0`
+
+## Level 2: Intermediate
+
+Exercise 6: Multiply three numbers
+
+Create a lambda function that accepts three numbers and returns their product.
+
+- Inputs: `2, 3, 4`
+- Expected output: `24`
+
+Exercise 7: Find the length of a string
+
+Create a lambda function that accepts a string and returns its length.
+
+- Input: `"Python"`
+- Expected output: `6`
+
+Exercise 8: Sort numbers by their last digit
+
+Use a lambda function with `sorted()` to sort the following list based on the last digit of each number.
+
+```
+numbers = [23, 15, 42, 31, 18]
+```
+
+\- Expected output: `[31, 42, 23, 15, 18]`
+
+Exercise 9: Filter numbers greater than 10
+
+Use a lambda function with `filter()` to select numbers greater than 10.
+
+```
+numbers = [5, 12, 8, 20, 3, 15]
+```
+
+\- Expected output: `[12, 20, 15]`
+
+Exercise 10: Apply a discount
+
+Create a lambda function that accepts a product price and a discount percentage, then returns the final price after the discount.
+
+- Inputs: `1000, 20`
+- Expected output: `800.0`
+
+## How to practise
+
+Your progress
+
+0 of 10 completed
+
+1\. Add two numbers
+
+2\. Square a number
+
+3\. Even or odd
+
+4\. Find the greater number
+
+5\. Celsius to Fahrenheit
+
+6\. Multiply three numbers
+
+7\. String length
+
+8\. Sort by last digit
+
+9\. Filter numbers greater than 10
+
+10\. Apply a discount
+
+Show solutions and explanations
+
+
+
+
+

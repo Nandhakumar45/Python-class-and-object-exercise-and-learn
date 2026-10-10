@@ -1,0 +1,41 @@
+Python Recursion — Definition
+Recursion is a programming technique in which a function calls itself to solve a problem in
+smaller steps until a stopping condition, called the base condition, is met.
+Example:
+```
+def count(n):
+if n == 0:       # Base condition
+return
+print(n)
+count(n - 1)     # Recursive callcount(3)
+```
+Output:
+```
+3
+2
+1
+```
+
+Remember these two terms:
+- Recursive call: A function calling itself.
+- Base condition: The condition that stops recursion.
+
+*****************************************************************************************
+where the recrusion is useful
+
+You don't need recursion for every Python program. Let's look at where it's useful in real projects.
+1. Where do we use recursion?
+1. Searching folders and files
+A folder can contain other folders, which can contain more folders. Recursion can explore each level automatically.
+Example: Finding all files inside a project directory.
+2. Tree data structures
+Recursion is commonly used to visit each node and its children.
+Example: Processing hierarchical medical device configuration data.
+3. Mathematical calculations
+Some mathematical problems naturally break into smaller calculations.
+Example: Factorial, where 5! = 5 × 4 × 3 × 2 × 1.
+4. Maze solving and backtracking
+Recursion can explore one path, then return and try another when a path fails.
+Example: Finding a valid path through a maze.
+
+*****************************************************************************************

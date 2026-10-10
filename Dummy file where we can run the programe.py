@@ -1,3 +1,9 @@
-numbers = [5, 12, 8, 20, 3, 15]
-output = lambda numbers: filter(numbers>10)
-print(output)
+def print_numbers(n):
+    if n == 0:
+        return
+
+
+    print(n)
+    print_numbers(n - 1)
+
+print_numbers(5)

@@ -1,9 +1,6 @@
-def print_numbers(n):
-    if n == 0:
-        return
+def reverse_string(s):
+    if s == "":
+        return ""
+    return reverse_string(s[1:]) + s[0]
 
-
-    print(n)
-    print_numbers(n - 1)
-
-print_numbers(5)
+print(reverse_string("hello"))

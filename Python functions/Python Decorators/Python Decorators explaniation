@@ -1,0 +1,200 @@
+# Python Decorators Explained — Beginner Friendly
+
+A decorator in Python is a function that adds extra behavior to another function without changing the original function's code.
+
+Decorators let you add extra behavior to a function, without changing the function's code.
+
+A decorator is a function that takes another function as input and returns a new function.
+
+Let's understand this using your pizza example.
+
+## 1. Your code
+
+```
+def my_decorator(func):
+def wrapper():
+print("Preparing the pizza base...")
+func()
+ print("Adding extra toppings before serving!")
+  return wrapper
+  @my_decorator
+  def say_hello():
+  print("Plain pizza is ready!")
+  say_hello()
+```
+
+Imagine `say_hello()` is a plain pizza. The decorator adds extra steps before and after the pizza is ready.
+
+## 2. Output
+
+```
+Preparing the pizza base...
+Plain pizza is ready!
+Adding extra toppings before serving!
+```
+
+### How the decorator works
+
+Call `say_hello()`
+
+1\. Wrapper starts
+
+Preparing the pizza base...
+
+2\. Original function runs
+
+Plain pizza is ready!
+
+3\. Wrapper continues
+
+Adding extra toppings before serving!
+
+## 3. Understand each line
+
+### Step 1: `def my_decorator(func):`
+
+```
+def my_decorator(func):
+```
+
+- `my_decorator` is the decorator function.
+- `func` receives the original function as an argument.
+- In this example, `func` refers to `say_hello`.
+
+### Step 2: Define the wrapper function
+
+```
+def wrapper():    print("Preparing the pizza base...")    func()    print("Adding extra toppings before serving!")
+```
+
+The wrapper controls when the original function executes.
+
+1. It prints the first message.
+2. `func()` calls the original `say_hello()` function.
+3. It prints the final message.
+
+### Step 3: Return the wrapper
+
+```
+return wrapper
+```
+
+This returns the wrapper function itself, not the result of executing it.
+
+That distinction is important: `return wrapper` does not call `wrapper()`.
+
+### Step 4: Apply the decorator
+
+```
+@my_decoratordef say_hello():    print("Plain pizza is ready!")
+```
+
+The `@my_decorator` syntax is shorthand for this assignment:
+
+```
+def say_hello():    print("Plain pizza is ready!")say_hello = my_decorator(say_hello)
+```
+
+Python passes the original function into `my_decorator`, then assigns the returned wrapper to `say_hello`.
+
+### Step 5: Call the function
+
+```
+say_hello()
+```
+
+Although you call `say_hello()`, the name now refers to the wrapper function. That is why the extra messages appear before and after the original message.
+
+## 4. Debugging view: Follow the function references
+
+| Execution step | What happens                                              |
+| -------------- | --------------------------------------------------------- |
+| 1              | Python defines the original `say_hello` function.         |
+| 2              | `@my_decorator` passes that function into `my_decorator`. |
+| 3              | `my_decorator` creates and returns `wrapper`.             |
+| 4              | The name `say_hello` now refers to `wrapper`.             |
+| 5              | `say_hello()` executes the wrapper.                       |
+| 6              | `func()` executes the original function.                  |
+| 7              | The wrapper completes its final print statement.          |
+
+## 5. Where are decorators used in real projects?
+
+Decorators are useful when you want to add common behavior to multiple functions without repeating code.
+
+- Logging: Record when a function starts and finishes.
+- Timing: Measure how long a function takes.
+- Authentication: Check whether a user is authorized.
+- Testing: Apply test configuration or mark test functions.
+- Caching: Reuse previously calculated results.
+
+For example, a simple logging decorator:
+
+```
+def my_decorator(func):    def wrapper():        print("Function started")        func()        print("Function finished")    return wrapper@my_decoratordef login():    print("User logged in")login()
+```
+
+Output:
+
+```
+Function started
+User logged in
+Function finished
+```
+
+One improvement for production code is to use `functools.wraps` to preserve the original function's metadata, and `*args, **kwargs` to support functions that accept arguments.
+
+## 6. Practice exercise
+
+Try answering this question before running the code.
+
+```
+def my_decorator(func):    def wrapper():        print("A")        func()        print("B")    return wrapper@my_decoratordef hello():    print("C")hello()
+```
+
+
+
+Python executes the wrapper: first `A`, then the original function prints `C`, and finally the wrapper prints `B`.
+
+
+
+Multiple call decorators
+
+Multiple Decorator Calls
+A decorator can be called multiple times. Just place the decorator above the function you want to decorate.
+
+Example
+Using the @changecase decorator on two functions:
+
+def changecase(func):
+  def myinner():
+    return func().upper()
+  return myinner
+
+@changecase
+def myfunction():
+  return "Hello Sally"
+
+@changecase
+def otherfunction():
+  return "I am speed!"
+
+print(myfunction())
+print(otherfunction())
+
+
+Arguments in the Decorated Function
+Functions that require arguments can also be decorated, just make sure you pass the arguments to the wrapper function:
+
+Example
+Functions with arguments can also be decorated:
+
+def changecase(func):
+  def myinner(x):
+    return func(x).upper()
+  return myinner
+
+@changecase
+def myfunction(nam):
+  return "Hello " + nam
+
+print(myfunction("John"))

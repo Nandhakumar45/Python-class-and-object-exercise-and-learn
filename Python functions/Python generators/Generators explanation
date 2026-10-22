@@ -1,0 +1,128 @@
+Generators
+Generators are functions that can pause and resume their execution.
+
+When a generator function is called, it returns a generator object, which is an iterator.
+
+The code inside the function is not executed yet, it is only compiled. The function only executes when you iterate over the generator.
+
+
+Let's understand Python generators from the beginning, step by step, using simple examples.
+
+## 1. What is a generator?
+
+A generator is a special type of function that produces values one at a time using the `yield` keyword.
+
+Think of it like a vending machine. You request one item, receive it, and then request the next item when you're ready.
+
+- `return` gives back a value and ends the function.
+- `yield` gives back a value and pauses the function so it can resume later.
+
+## 2. Your first generator
+
+```
+def my_generator():    yield 10    yield 20    yield 30gen = my_generator()print(next(gen))print(next(gen))print(next(gen))
+```
+
+Output:
+
+```
+10
+20
+30
+```
+
+### How does Python execute this code?
+
+1. Create the generator
+
+   `gen = my_generator()` creates a generator object. The function body hasn't started executing yet.
+2. First `next(gen)`
+
+   Python starts the function, reaches `yield 10`, produces `10`, and pauses.
+3. Second `next(gen)`
+
+   Python resumes from where it paused, reaches `yield 20`, produces `20`, and pauses again.
+4. Third `next(gen)`
+
+   Python resumes, reaches `yield 30`, produces `30`, and pauses.
+
+Important: Python does not restart the function from the beginning every time you call `next(gen)`. It remembers where the generator paused.
+
+## 3. See exactly when the code executes
+
+```
+def my_generator():    print("Step 1")    yield 10    print("Step 2")    yield 20    print("Step 3")    yield 30gen = my_generator()print("First call:")print(next(gen))print("Second call:")print(next(gen))
+```
+
+Output:
+
+```
+First call:
+Step 1
+10
+Second call:
+Step 2
+20
+```
+
+Notice that `Step 3` is not printed because we called `next(gen)` only twice.
+
+The generator continues only when another value is requested.
+
+## 4. Difference between `return` and `yield`
+
+### Normal function: `return`
+
+```
+def example():    print("Step 1")    return 10    print("Step 2")print(example())
+```
+
+Output: `Step 1`, then `10`. The function ends at `return`.
+
+### Generator function: `yield`
+
+```
+def example():    print("Step 1")    yield 10    print("Step 2")    yield 20gen = example()print(next(gen))print(next(gen))
+```
+
+Output: `Step 1`, `10`, `Step 2`, `20`. The function pauses and resumes.
+
+## 5. Do you need to use `next()` every time?
+
+No. A `for` loop automatically requests values from a generator until it finishes.
+
+```
+def numbers():    yield 1    yield 2    yield 3for number in numbers():    print(number)
+```
+
+Output:
+
+```
+1
+2
+3
+```
+
+## 6. What happens if there is no `yield`?
+
+A function without `yield` is a normal function, even if you call it a generator.
+
+```
+def example():    return 10gen = example()print(next(gen))
+```
+
+This raises a `TypeError` because `example()` returns the integer `10`, not a generator object.
+
+## 7. Why do we use generators?
+
+Generators are especially useful when processing large amounts of data because they can produce each value when needed instead of creating a complete list in memory.
+
+For example, generating numbers from 1 to 1,000,000 one at a time can avoid storing all those numbers in a list.
+
+## Quick practice question
+
+Consider this code:
+
+```
+def test():    print("A")    yield 100    print("B")    yield 200    print("C")    yield 300gen = test()print(next(gen))print(next(gen))
+```

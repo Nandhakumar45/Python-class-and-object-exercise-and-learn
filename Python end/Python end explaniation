@@ -130,3 +130,10 @@ The cursor has already moved to the next line, so `Python` appears there.
 - Default `print()` → moves to a new line after printing, not before.
 
 So, the first `Finished` is on the same line because the preceding `print("Hello", end="")` did not add a newline.
+
+************************Need to know***********************
+Code	What happens
+end="\n"	Moves to the next line (default)
+end=""	Adds nothing after the output
+end=" "	Adds one ordinary space
+end="\t"	Adds a horizontal tab

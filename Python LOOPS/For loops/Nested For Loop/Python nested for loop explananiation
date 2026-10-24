@@ -1,0 +1,85 @@
+****Basically
+```
+for i in range(2):       # Outer loop  always consider this one as row
+    print("A")
+for j in range(2):   # Inner loop always consider this one as coloumn
+    print("B")
+```
+### Step 1: Outer loop starts
+`i = 0`
+Python executes `print("A")` once.
+
+Then it enters the inner loop.
+
+- `j = 0` → prints `B`
+- `j = 1` → prints `B`
+
+The inner loop has now finished its 2 iterations.
+
+### First outer-loop iteration
+
+1
+
+`A` prints once
+
+2
+
+`B` prints when `j = 0`
+
+3
+
+`B` prints when `j = 1`
+
+Output so far: A, B, B
+
+### Step 2: Outer loop starts again
+
+Now `i = 1`.
+
+Python prints `A` once more, and the inner loop starts again from `j = 0`.
+
+- `j = 0` → prints `B`
+- `j = 1` → prints `B`
+
+The inner loop finishes again.
+
+### Final output
+
+```
+A
+B
+B
+A
+B
+B
+```
+
+| Statement    | Number of executions |
+| ------------ | -------------------- |
+| `print("A")` | 2                    |
+| `print("B")` | 4                    |
+
+Why does `B` print 4 times? Because the outer loop runs twice, and the inner loop runs twice each time:
+\\(2 \times 2 = 4\\).
+
+Remember: The inner loop starts again from the beginning for every iteration of the outer loop.
+
+## Your next question
+
+What will this code print?
+
+```
+for i in range(3):
+print("Python")
+for j in range(2):
+print("Hello")
+```
+
+The key thing need to remember
+
+browsers = ["Chrome", "Firefox"]
+test_cases = ["Login", "Search", "Logout"]
+
+for browser in browsers:
+    for test in test_cases:
+        print("Browser:", browser, "| Test:", test)

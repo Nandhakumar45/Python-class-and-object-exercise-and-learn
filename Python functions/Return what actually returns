@@ -1,0 +1,9 @@
+Return statement	What it returns
+return 1	Integer
+return "hello"	String
+return 10.5	Float
+return True	Boolean
+return None	No value / absence of a value
+return ()	Empty tuple
+return []	Empty list
+return {}	Empty dictionary

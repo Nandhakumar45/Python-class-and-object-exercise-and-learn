@@ -1,13 +1,9 @@
-from calculator import add, subtract
+import chess
 
-print("App started")
+def get_square(row, col):
+    return chess.square(col, 7 - row)
 
-#print("Addition:", add(20, 10))
-#print("Subtraction:", subtract(20, 10))
+result = get_square(7, 0)
 
-def main():
-    print(add(2, 2))
-    print(subtract(2, 2))
-
-if __name__ == "__main__":
-    main()
+print(result)
+print(type(result))

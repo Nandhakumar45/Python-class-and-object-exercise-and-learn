@@ -1,0 +1,132 @@
+In Python, `end` is a parameter of the `print()` function that specifies what Python should display
+at the end of the printed output.
+
+### Example
+
+```
+print("Hello", end=" ")print("World")
+```
+
+Output:
+
+```
+Hello World
+```
+
+Here, `end=" "` adds a space after `Hello` instead of moving to a new line.
+
+### Common `end` values
+
+| Code       | Meaning                       |
+| ---------- | ----------------------------- |
+| `end="\n"` | Moves to a new line (default) |
+| `end=" "`  | Adds a space                  |
+| `end=""`   | Adds nothing                  |
+| `end="-"`  | Adds a hyphen                 |
+
+Remember: `end` controls what happens immediately after a `print()` statement finishes displaying its text.
+
+
+***************************************************************************************************************
+Nandha, let's compare these two code blocks. The key is that `end=""` affects only the `print()`
+statement where you use it.
+
+### 1. First code
+
+```
+print("Hello", end="")print("Finished")print("Finished")
+```
+
+Output:
+
+```
+HelloFinished
+Finished
+```
+
+Why?
+
+- `Hello` prints without a newline.
+- The first `Finished` continues on the same line.
+- The second `Finished` starts on the next line because the previous `print()` adds a newline by default.
+
+### 2. Second code
+
+```
+print("Hello", end="")print("Finished")
+```
+
+Output:
+
+```
+HelloFinished
+```
+
+Why?
+
+- `Hello` prints without a newline.
+- `Finished` continues on the same line.
+- There is no third `print()` statement.
+
+### Main difference
+
+| First code                              | Second code                           |
+| --------------------------------------- | ------------------------------------- |
+| Two `Finished` statements               | One `Finished` statement              |
+| Prints `Finished` twice                 | Prints `Finished` once                |
+| Three lines of code that call `print()` | Two lines of code that call `print()` |
+
+Remember: `end=""` does not combine statements into one statement.
+It only controls what is printed at the end of that particular `print()` call.
+
+***************************************************************************************************************
+Nandha, the important point is that `Finished` does not always appear on the same line.
+ It depends on what the previous `print()` did.
+
+Look at this example:
+
+```
+print("Hello", end="")print("Finished")print("Python")
+```
+
+Output:
+
+```
+HelloFinished
+Python
+```
+
+### Why does this happen?
+
+Step 1
+
+```
+print("Hello", end="")
+```
+
+Prints `Hello` without a newline. The cursor stays on the same line.
+
+Step 2
+
+```
+print("Finished")
+```
+
+Python continues from the current cursor position, so `Finished` appears immediately after `Hello`.
+After printing, this statement adds a newline by default.
+
+Step 3
+
+```
+print("Python")
+```
+
+The cursor has already moved to the next line, so `Python` appears there.
+
+### Remember this rule
+
+- `end=""` → does not move to a new line.
+- `end=" "` → adds a space, but does not move to a new line.
+- Default `print()` → moves to a new line after printing, not before.
+
+So, the first `Finished` is on the same line because the preceding `print("Hello", end="")` did not add a newline.

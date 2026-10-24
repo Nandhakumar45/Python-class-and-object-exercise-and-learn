@@ -1,0 +1,18 @@
+Nandha, `if __name__ == "__main__":`
+is a condition that checks whether a Python file is being run directly or imported into another file.
+
+### Example
+
+```
+def main():    print("Hello World")if __name__ == "__main__":    main()
+```
+
+How it works:
+
+- `__name__` is a special built-in Python variable.
+- When you run the file directly, Python sets `__name__` to `"__main__"`.
+- The condition becomes `True`, so `main()` executes.
+- When another file imports this file, the condition is normally `False`, so `main()` is not called automatically.
+
+Remember: `main()` is not a special Python function.
+You can name it `test()` or something else. But keep `__name__ == "__main__"` exactly as written for the standard main guard.

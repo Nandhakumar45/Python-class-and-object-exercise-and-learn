@@ -1,0 +1,45 @@
+Nested while loop in Python
+A nested while loop means writing one while loop inside another while loop.
+- Outer while loop: Controls how many times the inner loop executes.
+- Inner while loop: Executes completely for every iteration of the outer loop.
+1. Basic syntax
+while condition1:    # Outer loop statements    while condition2:        # Inner loop statements
+
+
+
+2. Simple example
+i = 1while i <= 3:    print("Outer loop:", i)    j = 1    while j <= 3:        print("Inner loop:", j)        j += 1    i += 1
+
+
+
+Output:
+Outer loop: 1
+Inner loop: 1
+Inner loop: 2
+Inner loop: 3
+
+Outer loop: 2
+Inner loop: 1
+Inner loop: 2
+Inner loop: 3
+
+Outer loop: 3
+Inner loop: 1
+Inner loop: 2
+Inner loop: 3
+
+
+3. How does it execute?
+Execution flow
+1. Outer loop – i = 1
+
+   Inner loop executes 3 times (j = 1, 2, 3).
+2. Outer loop – i = 2
+
+   Inner loop executes another 3 times (j = 1, 2, 3).
+3. Outer loop – i = 3
+
+   Inner loop executes another 3 times (j = 1, 2, 3).
+4. Outer loop terminates
+
+   i becomes 4, so the condition i <= 3 becomes False.

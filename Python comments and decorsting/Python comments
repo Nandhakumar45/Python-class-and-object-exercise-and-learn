@@ -1,0 +1,184 @@
+Python Comments – Single-Line and Multi-Line Comments
+In Python, comments are used to explain the code, describe its functionality, and make programs easier to understand.
+
+Comments are not executed as Python instructions. They are mainly written for developers who read and maintain the code.
+
+Python has two commonly used comment styles:
+1. Single-line comments.
+2. Multi-line comments.
+
+1. Single-line comments
+A single-line comment starts with the # symbol.
+
+Anything written after # on that line is treated as a comment by Python.
+
+Syntax:
+# This is a single-line comment
+
+
+
+Example 1:
+# Printing a welcome messageprint("Welcome to Python")
+
+
+
+Output:
+Welcome to Python
+
+
+Explanation:
+- # Printing a welcome message is a comment.
+- Python ignores this line during execution.
+- print("Welcome to Python") is executed.
+Example 2: Comment along with code
+
+You can also write a comment after a Python statement.
+age = 27  # Assigning age to a variableprint(age)  # Displaying age
+
+
+
+Output:
+27
+
+
+When should you use single-line comments?
+- To explain a variable.
+- To describe a condition.
+- To explain a loop.
+- To clarify complex logic.
+
+2. Multi-line comments
+Multi-line comments are used when you want to write explanations across multiple lines.
+
+Python does not have a dedicated multi-line comment syntax. However, you can achieve this using multiple # symbols.
+
+Method 1: Using multiple # symbols
+# This program demonstrates# how to use nested while loops# to print numbers from 1 to 5.# The outer loop controls rows.
+# The inner loop controls columns.
+i = 1
+while i <= 5:
+    j = 1
+    while j <= i:
+    print(j, end=" ")
+    j += 1
+    print()
+    i += 1
+
+
+
+Output:
+1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
+
+
+Explanation:
+
+Each line beginning with # is ignored by Python.
+
+The actual program starts executing from i = 1.
+Method 2: Using triple quotes
+Python also supports triple-quoted strings.
+
+You can write them using either:
+- Three single quotes: '''
+- Three double quotes: """
+Example:
+"""This program demonstratesthe usage of nested while loops.The outer loop controls rows.The inner loop controls columns."""
+i = 1
+while
+i <= 3:
+print(i)
+i += 1
+
+
+Output:
+1
+2
+3
+
+
+Important concept:
+
+Triple quotes are not technically multi-line comments. They create multi-line string objects.
+
+If you place them as standalone expressions, Python evaluates the string and discards it.
+They are commonly used as docstrings when placed at the beginning of a module, class, or function.
+
+3. Difference between comments and docstrings
+This is an important concept in professional Python programming.
+Feature	Comments	Docstrings
+Symbol	#	''' or """
+Purpose	Explain code	Document functions, classes and modules
+Access using Python	No	Yes
+Executed as a string	No	Yes
+Common usage	Explain logic	Describe functionality
+
+Example of a docstring:
+def addition(a, b):
+""    This function accepts two numbers.    It returns their sum.    """
+return a + b
+print(addition(10, 20))
+print(addition.__doc__)
+
+
+Output:
+30
+
+    This function accepts two numbers.
+    It returns their sum.
+
+***********************************************************************************************************
+1. Single-line comment – #
+Use # to explain a single line of code.
+
+Example 1: Variable explanation
+# Store employee namename = "Nandha"# Store employee ageage = 27# Print employee detailsprint(name)print(age)
+
+
+
+Example 2: Comment inside a loop
+# Initialize counteri = 1# Execute loop until i reaches 5while i <= 5:    print(i)    i += 1  # Increment counter
+
+
+
+Example 3: Inline comment
+a = 10  # First numberb = 20  # Second numberresult = a + b  # Add both numbersprint(result)
+
+
+
+2. Multi-line comments using '''
+Python treats triple single quotes as a multi-line string, not a dedicated comment syntax. They are often used for documentation.
+
+Example 1: Standalone multi-line string
+'''This program demonstrateshow to print numbersusing a while loop.'''i = 1while i <= 5:    print(i)    i += 1
+
+
+
+Example 2: Multiple lines of explanation
+'''Employee Information ProgramThis program stores employee details.It displays employee name, age and salary.'''name = "John"age = 25salary = 30000print(name, age, salary)
+
+
+
+3. Multi-line strings using """
+Triple double quotes work in the same way as triple single quotes.
+
+Example 1: Standalone multi-line string
+"""This program calculatesthe sum of two numbers.It accepts two values and displays their sum."""a = 10b = 20print(a + b)
+
+
+
+Example 2: Using triple double quotes as a docstring
+def addition(a, b):    """    Function name: addition    Purpose:    Add two numbers.    Parameters:    a - First number    b - Second number    Returns:    Sum of both numbers.    """    return a + bprint(addition(10, 20))
+
+
+
+4. Difference between all three
+Feature	#	'''	"""
+Single-line comments	Yes	Possible as string	Possible as string
+Multi-line comments	Multiple #	Multi-line string	Multi-line string
+Dedicated comment syntax	Yes	No	No
+Used for docstrings	No	Yes	Yes
+Can access as a string	No	Yes	Yes

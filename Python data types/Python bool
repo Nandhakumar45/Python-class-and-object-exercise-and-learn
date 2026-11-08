@@ -1,0 +1,101 @@
+Yes, that's the basic idea, with one small correction.
+For numbers
+bool(0)    # False
+bool(1)    # True
+bool(10)   # True
+bool(-5)   # True
+
+
+Rule:
+0 → False
+Any non-zero number (1, 10, -5, 0.5) → True
+For strings
+bool("")     # False
+bool("0")    # True
+bool("Hi")   # True
+bool(" ")    # True
+
+
+
+Rule:
+Empty string "" → False
+Any non-empty string → True
+For lists
+bool([])      # False
+bool([0])     # True
+bool([False]) # True
+bool([""])    # True
+
+
+Rule:
+Empty list → False
+List with at least one item → True
+
+Python only checks whether the list is empty, not whether the items inside are 0 or False.
+
+Same for tuples
+bool(())      # False
+bool((0,))    # True
+
+
+Rule:
+
+Empty tuple → False
+Non-empty tuple → True
+Same for sets
+bool(set())    # False
+bool({0})      # True
+
+
+Rule:
+
+Empty set → False
+Non-empty set → True
+Same for dictionaries
+bool({})          # False
+bool({"a": 0})    # True
+
+
+Rule:
+
+Empty dictionary → False
+Dictionary with at least one key-value pair → True
+Easy shortcut
+
+Ask yourself:
+
+"Is it empty?"
+
+For strings, lists, tuples, sets, and dictionaries:
+
+Empty → False
+Not empty → True
+
+For numbers:
+
+Zero → False
+Non-zero → True
+
+Try to predict these before running them:
+
+print(bool(""))
+print(bool(" "))
+print(bool(0))
+print(bool(-1))
+print(bool([]))
+print(bool([False]))
+
+
+Answer:
+
+False
+True
+False
+True
+False
+True
+
+
+The last one surprises many beginners:
+bool([False])  # True
+because the list is not empty, even though it contains False.

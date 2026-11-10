@@ -1,153 +1,157 @@
-#1
-a = 100
-b = 10.5
-c = "Python"
-d = True
-e = [10, 20, 30]
-f = (1, 2, 3)
-g = {"name", "john"}
+a = 25
+b = 4
 
-print(type(a))
-print(type(b))
-print(type(d))
-print(type(e))
-print(type(f))
-print(type(g))
-
+print(a + b)  #29
+print(a - b)  #21
+print(a * b)  #100
+print(a / b)  #6.2
+print(a // b) #6
+print(a % b)  #1
+print(a ** b) #390,625
 
 #2
+a = 10
+b = 5
+c = 2
 
-x = input("Enter the number")
-print(type(x))
+result = a + b * c ** 2 - a / b
+
+print(result)  #28.0
 
 #3
-x = [1, 2, 3, 4, 5]
-x[3] = 100
-x.append(200)
-x.remove(0)
-print(x)
+
+a = int(input("enter the number:"))
+b = int(input("enter the number"))
+
+result = (a+b) * (a+b) - (a-b) (a-b) / a * b
+print(result(type(result)))
+
 
 #4
-x = (1, 2, 30, 4, 5)
-print(x(0, 4))
-len(x)
-if x == 30:
-    print("Tuple exist")
+total_seconds = 98765
+
+hours = total_seconds // 3600
+
+minutes = (total_seconds % 3600) // 60
+
+seconds = total_seconds % 60
+
+print(f"Hours = {hours} minutes =  {minutes} seconds = {seconds}")
+
 
 #5
-x = { name : "Nandha",
-      age  : 27,
-      department : "Testing",
-      salary : "$60"}
-x.append(salary: "$80")
-x.append(experience = "8 years")
+a = 100
+b = 200
+c = 100
+
+print(a = b)
+print(a != c)
+print(b > a)
+print(a <= c)
+print(b >= c)
 
 #6
-A = {10, 20, 30, 40, 50}
-B = {30, 40, 50, 60, 70}
+a = int(input("Enter first number: "))
+b = int(input("Enter second number: "))
+c = int(input("Enter third number: "))
 
-#need to recall the union and intersection
+# Largest number
+if a >= b and a >= c:
+    largest = a
+elif b >= a and b >= c:
+    largest = b
+else:
+    largest = c
+
+# Smallest number
+if a <= b and a <= c:
+    smallest = a
+elif b <= a and b <= c:
+    smallest = b
+else:
+    smallest = c
+
+# All three equal
+all_equal = (a == b == c)
+
+# Any two equal
+any_two_equal = (a == b or b == c or a == c)
+
+print("Largest:", largest)
+print("Smallest:", smallest)
+print("All three equal:", all_equal)
+print("Any two equal:", any_two_equal)
+
 
 #7
-x = [1 , 2, 3, 4, 5]
-y = "Python"
+experience = int(input("enter the experience"))
+age = int(input("enter the age"))
 
-x[0] = 7
-print(x)
-y[0] = "pp"
-print(y)
+if (age >= 18 or age >=60) and experience >= 2:
+    print("Hello")
+else:
+    print("age should not be less than 18 and greater than 60")
 
 #8
-x = [5, 5.14 , "Hello world", True]
-print(type(x))
+password = "Python@123"
+confirm_password = "Python@123"
+
+# 1. Check whether both passwords match
+print("Passwords match:", password == confirm_password)
+
+# 2. Check whether password is different from Python123
+print("Password is different:", confirm_password and password != "Python123")
+
+# 3. Check whether password length is at least 8 characters
+print("Password length is valid:", len(password) >= 8)
 
 #9
-x = int(input("Enter the nubmer here:"))
+a = True
+b = False
+c = True
 
-if x > 0:
-    print("Positive")
-
-elif x < 0:
-    print("Negative")
-
-else:
-    print("Zero")
+print(a and b) #false
+print(a or b) #True
+print(not a)  #false
+print(a and b or c) # True
+print(a or b and c) # True
+print(not (a and c)) #false
 
 #10
-#not sure how to solve this
+experience = 6
+rating = 4.5
+disciplinary_action = False
+
+eligible = ( experience >= 5 and rating >= 4 and disciplinary_action == False)
+print("Eligible for promotion:", eligible)
 
 #11
-#not sure how to solve this
+username = "admin"
+password = "Admin@123"
+is_account_active = True
+
+login = (username == "admin" and password == "Admin@123" and is_account_active == True)
+print(login)
 
 #12
-#not sure how to solve this
+age = 25
+membership_active = False
+day_pass = True
+is_banned = False
+
+can_enter = age >= 18 and (membership_active or day_pass) and not is_banned
+
+print("Can enter gym:", can_enter)
+
 
 #13
-#not sure how to solve this
 
-#14
-#not sure how to solve this
+a = 20
 
-#15
-#not sure how to solve this
+a += 10 #30
+a -= 5  #15
+a *= 2  #40
+a /= 5  #4
+a **= 2 #400
 
-#16
-x = int("250")
-x = x + 50
-print(x)
-
-#17
-x = int(45.89)
-print(x)
-
-#18
-x = int(input("Enter the first number"))
-y = int(input("Enter the second number"))
-z = x + y
-print(z)
-
-#19
-x = bool(0)
-print(x)
-
-x = bool(1)
-print(x)
-
-x = bool(-1)
-print(x)
-
-x = bool("Python")
-print(x)
-
-x = bool([])
-print(x)
-
-x = bool([0])
-print(x)
-
-x = bool(None)
-print(x)
-
-#20
-#not sure how to solve this
-
-#21
-x = "125.75"
-x = float(x)
-x = int(x)
-print(x)
-
-#22 to #31
-#not sure how to solve this
-
-#32
-print(bool(0))   #false
-print(bool(10))  #false
-print(bool(""))  #false
-print(bool("0"))  #false
-print(bool([]))  #false
-print(bool([0])) #false
-
-
-
-
+print(a)

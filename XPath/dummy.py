@@ -153,5 +153,136 @@ a -= 5  #15
 a *= 2  #40
 a /= 5  #4
 a **= 2 #400
-
 print(a)
+
+#14
+
+balance = 50000
+
+# 1. Deposit ₹10,000
+balance += 10000
+
+# 2. Withdraw ₹5,000
+balance -= 5000
+
+# 3. Add 5% interest
+balance *= 1.05
+
+# 4. Deduct ₹2,000
+balance -= 2000
+
+# 5. Display final balance
+print("Final Balance:", balance)
+
+
+#15
+x = 100
+
+x += 20 #120
+x //= 5 #24
+x *= 3  #72
+x %= 7  #
+x **= 2
+print(x)
+
+#16
+a = 100
+b = 100
+c = 100.0
+
+print(a == b)  # true
+print(a is b)  #false
+print(a == c)  #true
+print(a is c)  #false
+print(a is not c) #false
+
+#17
+username = None
+password = "Python123"
+age = 25
+
+username = None
+password = "Python123"
+age = 25
+
+# 1. Whether username is None
+print(username is None)
+
+# 2. Whether password is not None
+print(password is not None)
+
+# 3. Whether age is None
+print(age is None)
+
+# 4. Whether username and password are the same object
+print(username is password)
+
+#18
+a = [10, 20, 30]
+b = a
+c = [10, 20, 30]
+
+print(a == b)  #True
+print(a is b)  #False
+
+print(a == c)  #True
+print(a is c)  #False
+
+print(b is c)  #false
+
+#19
+text = "Python Programming"
+
+print("Python" in text)
+print("Java" in text)
+print("gram" in text)
+print("python" in text)
+print("Programming" not in text)
+
+
+#20
+
+skills = ["Python", "Selenium", "Playwright", "SQL", "Java"]
+
+print("Python" in skills)
+print("C#" not in skills)
+print("SQL" in skills)
+print("JavaScript" not in skills)
+
+
+#21
+valid_users = ["admin", "nandha", "tester", "developer"]
+
+username = input("Enter username: ")
+
+if valid_users in username:
+    print("Access granted")
+
+else:
+    print("Access denied")
+
+#22
+a = 12
+b = 10
+
+print(a & b)
+print(a | b)
+print(a ^ b)
+print(~a)
+print(a << 2)
+print(a >> 2)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

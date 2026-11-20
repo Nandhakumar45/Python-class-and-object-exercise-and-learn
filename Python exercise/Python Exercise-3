@@ -1,0 +1,412 @@
+# **Python Combined Practice — 10 Exercises**
+
+These exercises combine all the topics you've studied so far, from variables and data types to loops and nested conditions.
+
+**Topics covered:**
+
+- Variables, naming rules, multiple assignment
+- Data types: `int`, `float`, `str`, `bool`, `None`
+- Type conversion: `int()`, `float()`, `str()`, `bool()`
+- Operators: arithmetic, comparison, logical, assignment, identity, membership, bitwise
+- Input/output and formatting
+- Strings: indexing, slicing, methods, f-strings, `.format()`
+- Conditional statements: `if`, `elif`, `else`, nested `if`
+- Loops: `for`, `while`, nested loops
+
+Difficulty progression: Medium → Hard → Advanced
+
+I have intentionally **not included solutions** so you can solve them independently. These are based on practical scenarios, especially QA, software testing, billing, employee evaluation, and system monitoring.
+
+## **Exercise 1 — Employee Salary & Bonus Calculator**
+
+Medium
+
+**Topics:** Variables, input, type conversion, arithmetic, comparisons, `if/else`, f-strings, multiple assignment.
+
+### **Requirements**
+
+1. Get employee name, basic salary, and years of experience.
+2. Assign two numeric values using multiple assignment.
+3. Calculate:
+   - HRA = 20% of basic salary
+   - DA = 10% of basic salary
+   - Bonus = 5% of basic salary if experience is 3 or more years; otherwise 0.
+4. Calculate gross salary = basic + HRA + DA + bonus.
+5. If gross salary is ₹50,000 or above, display `High Salary`; otherwise, `Standard Salary`.
+6. Convert salary values appropriately.
+7. Display the salary report with two decimal places.
+
+**Expected output format:**
+
+```
+===== SALARY REPORT =====
+Employee Name : Arun
+Basic Salary  : 40000.00
+HRA           : 8000.00
+DA            : 4000.00
+Bonus         : 2000.00
+Gross Salary  : 54000.00
+Category      : High Salary
+```
+
+## **Exercise 2 — Student Result & Grade Evaluation**
+
+Medium
+
+**Topics:** Data types, arithmetic, logical operators, comparison, nested conditions, string formatting.
+
+### **Requirements**
+
+1. Get student name and marks for 5 subjects.
+2. Convert marks into integers.
+3. Calculate total marks, average, and percentage.
+4. If any subject mark is below 35, the student fails.
+5. Grade based on average:
+   - Average ≥ 90 → A
+   - Average ≥ 75 → B
+   - Average ≥ 60 → C
+   - Average ≥ 50 → D
+   - Otherwise → Fail
+6. Use nested `if` conditions to determine the final result.
+7. Display `Passed` or `Failed` separately from the grade.
+
+**Expected output format:**
+
+```
+===== STUDENT RESULT =====
+Student Name : Arun
+Total Marks  : 410
+Average      : 82.00
+Grade        : B
+Result       : Passed
+```
+
+## **Exercise 3 — QA Test Execution Analyzer**
+
+Medium–Hard
+
+**Topics:** Boolean, `None`, arithmetic, logical operators, conditional statements, `.format()`, f-strings.
+
+### **Requirements**
+
+1. Get project name, tester name, and total test cases.
+2. Get passed, failed, blocked, and not-executed counts.
+3. Validate that:
+   - All test counts are non-negative.
+   - Sum of all test counts equals total test cases.
+   - Total test cases is greater than zero.
+4. Use a Boolean variable `report_valid`.
+5. Calculate execution percentage, pass percentage, and failure percentage.
+6. If execution is ≥ 95% → `Excellent Execution`.
+7. If execution is ≥ 80% → `Good Execution`.
+8. Otherwise → `Poor Execution`.
+9. If failure percentage exceeds 10%, display `Attention Required`.
+10. Use `None` for an optional reviewer and assign `"Not Assigned"` if no reviewer exists.
+
+## **Exercise 4 — Inventory & Reorder Alert System**
+
+Medium–Hard
+
+**Topics:** Strings, `in`, `.lower()`, `bool()`, `None`, comparison, nested conditions.
+
+### **Requirements**
+
+1. Get product name, available stock, reorder level, and supplier name.
+2. Convert stock and reorder level to integers.
+3. Check whether product name contains `"medical"` (case-insensitive).
+4. Determine stock status:
+   - Stock = 0 → `Out of Stock`
+   - Stock below reorder level → `Low Stock`
+   - Stock equal to reorder level → `Reorder Required`
+   - Stock above reorder level → `Stock Available`
+5. If product name contains `"medical"`, classify it as `Medical Product`; otherwise, `Regular Product`.
+6. If stock is below reorder level, display `Purchase Order Required`.
+7. If supplier name is empty, use `None` and display `Supplier Not Assigned`.
+8. Display a complete inventory report.
+
+## **Exercise 5 — Electricity Bill Calculator**
+
+Medium–Hard
+
+**Topics:** Arithmetic, comparison, logical operators, nested `if`, input conversion, `.format()`.
+
+### **Requirements**
+
+Get customer name and units consumed.
+
+Calculate energy charge using progressive slabs:
+
+| Slab            | Rate    |
+| --------------- | ------- |
+| First 100 units | ₹2/unit |
+| Next 100 units  | ₹3/unit |
+| Above 200 units | ₹5/unit |
+
+Additional requirements:
+
+1. Consumption ≤ 0 → `Invalid Input`.
+2. Calculate the bill progressively.
+3. If consumption exceeds 300 units, add a 5% surcharge.
+4. If bill exceeds ₹1,000, display `High Consumption Bill`.
+5. Use `.format()` to display energy charge, surcharge, and total with 2 decimals.
+
+## **Exercise 6 — Password & Username Validation**
+
+Hard
+
+**Topics:** Strings, indexing, slicing, string methods, membership, Boolean variables, logical operators, nested conditions.
+
+### **Requirements**
+
+1. Get username and password.
+2. Check username:
+   - Must not be empty.
+   - Convert username to lowercase for a case-insensitive check.
+   - Username must contain at least 5 characters.
+3. Check password:
+   - At least 8 characters.
+   - Must contain at least one digit.
+   - Must contain at least one uppercase letter.
+   - Must contain at least one lowercase letter.
+4. Use membership (`in`) to check characters.
+5. Use Boolean variables:
+   - `username_valid`
+   - `password_valid`
+6. If both are valid → `Account Creation Successful`.
+7. If username is invalid → `Invalid Username`.
+8. If password is invalid → `Weak Password`.
+9. Use nested conditions to determine the final result.
+
+Restriction: Don't use regular expressions, loops, or functions for this exercise. Try to solve it using the string methods and conditions you've learned so far.
+
+## **Exercise 7 — Network Device Health Monitor**
+
+Hard
+
+**Topics:** Variables, type conversion, arithmetic, logical operators, Boolean, `None`, nested `if`.
+
+### **Requirements**
+
+1. Get device name, IP address, CPU utilization, RAM utilization, and ping status.
+2. Convert CPU and RAM percentages to `float`.
+3. Ping status should be stored as a Boolean.
+4. Use `None` for an optional device location.
+5. Determine device health:
+   - Ping = False → `Device Offline`
+   - CPU > 90% → `Critical CPU`
+   - RAM > 90% → `Critical RAM`
+   - CPU and RAM both > 80% → `High Resource Usage`
+   - Otherwise → `Healthy`
+6. If CPU or RAM is ≥ 95%, display `Immediate Investigation Required`.
+7. Use nested `if` conditions.
+8. Display all information with formatted percentages.
+
+**Expected output format:**
+
+```
+===== DEVICE HEALTH REPORT =====
+Device Name  : CT-Console-01
+IP Address   : 192.168.1.10
+Location     : Lab 2
+CPU Usage    : 92.50%
+RAM Usage    : 78.00%
+Ping Status  : True
+Device Health: Critical CPU
+Alert        : Immediate Investigation Required
+```
+
+## **Exercise 8 — QA Log Analyzer**
+
+Hard
+
+**Topics:** Strings, indexing, slicing, string methods, membership, `for` loop, counters, conditionals.
+
+### **Requirements**
+
+1. Get a software log message from the user.
+2. Convert the log to lowercase for searching.
+3. Check whether it contains:
+   - `"error"`
+   - `"warning"`
+   - `"passed"`
+   - `"failed"`
+4. Use counters to count how many matching categories are detected.
+5. Display the first 10 characters of the log using slicing.
+6. Display the last 10 characters using negative indexing/slicing.
+7. Use a `for` loop to traverse the log characters.
+8. Count how many spaces and numeric characters exist in the log.
+9. Determine the log classification:
+   - Contains error → `Error Log`
+   - Otherwise, contains warning → `Warning Log`
+   - Otherwise, contains passed → `Success Log`
+   - Otherwise → `General Log`
+
+**Expected output format:**
+
+```
+===== LOG ANALYSIS =====
+Log Message       : Test execution failed with error 404
+First 10 Chars   : Test execu
+Last 10 Chars    : error 404
+Error Detected   : True
+Warning Detected : False
+Numeric Count    : 3
+Space Count     : 5
+Classification   : Error Log
+```
+
+## **Exercise 9 — Test Cycle Execution Simulator**
+
+Hard
+
+**Topics:** `while`, `for`, nested conditions, counters, accumulators, comparison, assignment operators, formatting.
+
+### **Requirements**
+
+1. Get project name and total number of test cases.
+2. Get the maximum number of retry attempts allowed.
+3. Use a `while` loop to simulate each test case.
+4. For each test case, get the execution result (`pass` or `fail`).
+5. Count:
+   - Passed test cases
+   - Failed test cases
+   - Total execution attempts
+6. If a test fails, allow retry attempts using a nested `while` loop.
+7. If it passes during a retry, count it as passed.
+8. If all retries are exhausted, count it as failed.
+9. Use an accumulator to calculate the total number of execution attempts.
+10. Display the final execution summary.
+
+**Expected output format:**
+
+```
+===== TEST CYCLE SUMMARY =====
+Project Name       : CT SOFTWARE
+Total Test Cases  : 5
+Passed            : 4
+Failed            : 1
+Execution Attempts : 7
+Pass Percentage   : 80.00%
+Cycle Status      : Completed
+```
+
+Practice target: Learn how the counter controls the loop, how the accumulator stores totals, and how the inner loop works independently from the outer loop.
+
+## **Exercise 10 — QA Access Permission & Feature Flag Analyzer**
+
+Very Hard
+
+**Topics:** All topics combined, including bitwise operators, Boolean, identity (`is`), membership (`in`), loops, nested conditions, string formatting, type conversion.
+
+### **Scenario**
+
+You are developing a simple QA tool that checks tester access permissions and feature availability.
+
+### **Requirements**
+
+**Part A — User information**
+
+1. Get tester name and role.
+2. Get feature name.
+3. Convert the feature enabled input into a Boolean.
+4. Use `None` for an optional reviewer.
+5. If reviewer is `None`, assign `"Not Assigned"`.
+
+**Part B — Feature validation**
+
+6. Check whether the feature name contains `"test"` using membership.
+7. Convert feature name to lowercase for case-insensitive validation.
+8. Determine whether the feature is enabled.
+
+**Part C — Bitwise permission system**
+
+Use the following permission values:
+
+| Permission | Value |
+| ---------- | ----- |
+| Read       | 1     |
+| Execute    | 2     |
+| Write      | 4     |
+| Admin      | 8     |
+
+9. Get the tester's permission code as an integer.
+10. Use bitwise `&` to check whether Read permission is enabled.
+11. Use bitwise `&` to check whether Execute permission is enabled.
+12. Use bitwise `&` to check whether Admin permission is enabled.
+13. Use bitwise `|` to combine Read and Execute permissions.
+14. Use bitwise `^` to toggle Execute permission.
+
+**Part D — Final access decision**
+
+15\. Use nested `if` conditions:
+
+- If the feature is disabled → `Feature Disabled`
+- If feature is enabled but tester lacks Read → `Access Denied`
+- If Read is available but Execute is missing → `Read Only Access`
+- If Read and Execute are available → `Execution Access Granted`
+- If Admin permission is available → `Administrator Access`
+
+16. Use a Boolean variable named `access_granted`.
+17. Display a formatted access report.
+
+**Expected output format:**
+
+```
+===== QA ACCESS REPORT =====
+Tester Name      : Arun
+Role            : Automation Tester
+Feature         : Test Runner
+Reviewer        : Not Assigned
+Feature Enabled : True
+Permission Code  : 3
+Read Permission : True
+Execute Permission: True
+Admin Permission : False
+Access Status   : Execution Access Granted
+Access Granted  : True
+```
+
+Practice target: This is the most challenging exercise. Pay attention to bitwise `&`, `|`, `^`, Boolean conditions, and the order in which nested conditions are checked.
+
+## **Topic coverage checklist**
+
+These 10 exercises collectively cover your full syllabus.
+
+| Topic                                  | Exercises         |
+| -------------------------------------- | ----------------- |
+| Variables & naming rules               | 1–10              |
+| Multiple assignment                    | 1, 2, 3           |
+| `int`, `float`, `str`, `bool`          | 1–10              |
+| `None`                                 | 3, 4, 7, 10       |
+| Type conversion                        | 1–10              |
+| Arithmetic operators                   | 1–5, 7, 9         |
+| Comparison operators                   | 1–10              |
+| Logical operators (`and`, `or`, `not`) | 1–10              |
+| Assignment operators (`+=`, etc.)      | 8, 9              |
+| Identity operators (`is`, `is not`)    | 3, 4, 7, 10       |
+| Membership (`in`, `not in`)            | 4, 6, 8, 10       |
+| Bitwise (`&`, `\\|`, `^`, shifts)      | 10                |
+| Input/output                           | 1–10              |
+| `.format()`                            | 1, 3, 5, 7, 9, 10 |
+| f-strings                              | 1–4, 7–10         |
+| String indexing & slicing              | 6, 8, 10          |
+| String methods                         | 1, 4, 6, 8, 10    |
+| `if / elif / else`                     | 1–10              |
+| Nested `if`                            | 2, 4, 7, 10       |
+| `for` loop                             | 8, 10             |
+| `while` loop                           | 9, 10             |
+| Nested loops                           | 9, 10             |
+
+### **How I recommend you complete them**
+
+- **Exercises 1–3:** Solve independently, without looking at previous answers.
+- **Exercises 4–6:** Focus on condition logic, string handling, and validation.
+- **Exercises 7–8:** Focus on real-world QA logic and loops.
+- **Exercise 9:** Focus on loop control, counters, accumulators, and retries.
+- **Exercise 10:** Your final challenge—combine everything.
+
+Don't rush into all 10. Complete them one at a time and send me your code. I'll review it like a code reviewer, identify bugs, explain why they happen, and score your solution out of 10.
+
+I can also give you a **fresh combined Python challenge every day** to build your skills progressively.
+
+Send me a new Python challenge dailyTap to set up

@@ -84,6 +84,101 @@ print(f"execution_Percentage  : {execution_Percentage:.2f}")
 print(f"pass_Percentage  : {pass_Percentage:.2f}")
 print(f"status  : {status}")
 
+#4
+Product = input("Enter a product name:")
+quantity = int(input("Enter how many quantity need:"))
+unit_price = int(input("Enter a unit price:"))
+
+sub_total = quantity * unit_price
+
+if sub_total >= 10000:
+    discount = sub_total * 15 / 100
+elif sub_total >= 5000:
+    discount = sub_total * 10 / 100
+elif sub_total >= 2000:
+    discount = sub_total * 5 / 100
+else:
+    print("No discount")
+
+final_amount = sub_total - discount
+
+print("===== SHOPPING BILL =====")
+print(f"Procut       : {Product.upper()}")
+print(f"Quantity     : {quantity}")
+print(f"unit_price   : {unit_price:.2f}")
+print(f"Subtotal     : {sub_total:.2f}")
+print(f"Discount     : {discount:.2f}")
+print(f"final_amount : {final_amount:.2f}")
+
+
+#5
+name = input("Enter your name: ")
+age = int(input("Enter your age: "))
+balance = float(input("Enter your account balance: "))
+
+employment_input = input("Are you employed (yes/no): ")
+employed = employment_input.lower() == "yes"   # Boolean variable
+
+reference_value = None
+
+if age >= 21 and balance >= 50000 and employed:
+    loan_eligible = "Yes"
+else:
+    loan_eligible = "No"
+
+print("===== BANK ELIGIBILITY =====")
+print(f"Customer Name : {name}")
+print(f"Age           : {age}")
+print(f"Balance       : {balance:.2f}")
+print(f"Employment    : {employed}")
+print(f"Loan Eligible : {loan_eligible}")
+
+if reference_value is None:
+    print("Reference Value : None")
+
+#6
+username = input("Enter username: ").strip().lower()
+password = input("Enter password: ").strip()
+
+username_valid = len(username) >= 5
+
+password_valid = (
+    ("@" in password or "#" in password)
+    and password[0].isupper()
+)
+
+if username_valid and password_valid:
+    final_status = "ACCEPTED"
+else:
+    final_status = "REJECTED"
+
+print("===== LOGIN VALIDATION =====")
+print(f"Username       : {username}")
+print(f"Username Valid : {username_valid}")
+print(f"Password Valid : {password_valid}")
+print(f"Final Status   : {final_status}")
+
+
+#7
+customer_name = input("Enter a customer name")
+unit_consumed = int(input("Enter a unit consumed"))
+
+if unit_consumed >= 100:
+    Energy_Charge = unit_consumed * 2
+
+elif unit_consumed >= 101 and unit_consumed >= 200:
+    Energy_Charge = unit_consumed * 3
+
+elif unit_consumed >= 201 and unit_consumed >= 300:
+    Energy_Charge = unit_consumed * 5
+
+
+
+
+
+
+
+
 
 
 

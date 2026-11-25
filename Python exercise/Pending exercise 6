@@ -1,0 +1,143 @@
+Understood. Here are 10 exercises using only **nested&#x20;**`for`**&#x20;loops and nested&#x20;**`if`**&#x20;conditions**.
+
+No lists, tuples, dictionaries, functions, or other data structures. Use only:
+
+- `for` loops
+- `if`, `else`
+- Variables
+- `input()` and `print()`
+- Counters and accumulators where required
+
+# **10 Python exercises – Nested&#x20;**`for`**&#x20;+ Nested&#x20;**`if`
+
+## **Beginner level**
+
+**Exercise 1 – Number comparison**
+
+Write a program:
+
+1. Outer loop runs from 1 to 5.
+2. Inner loop runs from 1 to 5.
+3. If the outer number is greater than the inner number:
+   - Check whether the outer number is even.
+   - If even, print `Greater and Even`.
+   - Otherwise, print `Greater and Odd`.
+4. Otherwise, print `Smaller or Equal`.
+
+**Exercise 2 – Even and odd number classification**
+
+1. Outer loop runs from 1 to 5.
+2. Inner loop runs from 1 to 5.
+3. If the outer number is even:
+   - If the inner number is even, print `Both Even`.
+   - Otherwise, print `Outer Even, Inner Odd`.
+4. Otherwise:
+   - If the inner number is even, print `Outer Odd, Inner Even`.
+   - Otherwise, print `Both Odd`.
+
+**Exercise 3 – Number range validation**
+
+1. Outer loop runs from 1 to 5.
+2. Inner loop runs from 1 to 10.
+3. If the inner number is greater than 5:
+   - If the outer number is greater than 3, print `Both Conditions Satisfied`.
+   - Otherwise, print `Only Inner Condition Satisfied`.
+4. Otherwise, print `Inner Number Below Range`.
+
+## **Intermediate level**
+
+**Exercise 4 – Multiplication table filtering**
+
+1. Outer loop runs from 1 to 5.
+2. Inner loop runs from 1 to 10.
+3. Calculate multiplication of both numbers.
+4. If the result is greater than 10:
+   - If the result is divisible by 2, print `Greater than 10 and Even`.
+   - Otherwise, print `Greater than 10 and Odd`.
+5. Otherwise, print `Result is 10 or Below`.
+
+**Exercise 5 – Prime number identification**
+
+1. Outer loop runs from 2 to 10.
+2. Inner loop runs from 2 to the outer number.
+3. Check whether the outer number is divisible by the inner number.
+4. If divisible:
+   - Check whether both numbers are equal.
+   - If equal, identify it as a possible prime number.
+   - Otherwise, identify it as a composite number.
+5. Avoid printing the same number multiple times.
+
+**Exercise 6 – Number pattern validation**
+
+1. Outer loop runs from 1 to 5.
+2. Inner loop runs from 1 to 5.
+3. If the inner number is less than or equal to the outer number:
+   - If the inner number is even, print `E`.
+   - Otherwise, print `O`.
+4. Otherwise, print `-`.
+
+Expected output:
+
+```
+O----
+OE---
+OEO--
+OEOE-
+OEOEO
+```
+
+## **Advanced level**
+
+**Exercise 7 – Find common factors**
+
+1. Outer loop runs from 1 to 20.
+2. Inner loop runs from 1 to 20.
+3. If the outer number is divisible by the inner number:
+   - Check whether the inner number is divisible by 2.
+   - If yes, print the outer number and its even factor.
+   - Otherwise, print the outer number and its odd factor.
+
+**Exercise 8 – Number combination analysis**
+
+1. Outer loop runs from 1 to 10.
+2. Inner loop runs from 1 to 10.
+3. If the sum of both numbers is greater than 10:
+   - If the sum is divisible by 5, print `Valid Combination`.
+   - Otherwise, print `Invalid Combination`.
+4. Otherwise, print `Sum Below 10`.
+
+**Exercise 9 – Nested number pattern**
+
+1. Outer loop runs from 1 to 6.
+2. Inner loop runs from 1 to 6.
+3. If the inner number is less than or equal to the outer number:
+   - If the outer and inner numbers are equal, print `*`.
+   - Otherwise, print the inner number.
+4. Otherwise, print a space.
+
+Expected output:
+
+```
+*
+1*
+12*
+123*
+1234*
+12345*
+```
+
+**Exercise 10 – Number range and divisibility analysis**
+
+1. Outer loop runs from 1 to 10.
+2. Inner loop runs from 1 to 10.
+3. If the outer number is greater than 5:
+   - If the inner number is greater than 5:
+     - Check whether their sum is even.
+     - If even, print `Valid Pair`.
+     - Otherwise, print `Invalid Pair`.
+   - Otherwise, print `Inner Number Below 6`.
+4. Otherwise, print `Outer Number Below 6`.
+
+**Practice rule:** Every exercise must contain an outer `for`, an inner `for`, and at least one `if` inside another `if`.
+
+Start with Exercise 1. Send me your code, and I'll evaluate your logic, indentation, condition placement and output.

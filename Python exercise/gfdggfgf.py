@@ -1,19 +1,12 @@
-c = True
-correct_pin = "2068"
-attempts = 0
-
-while attempts < 3:
-    pin = input("Enter the ATM pin:")
-
-    if correct_pin == pin:
-        print("PIN Verified Successfully")
-        c = False
-    else:
-        print("Invalid Pin")
-
-        attempts +=1
-        remaining_attempts = 3 - attempts
-        print(f"Remaining attempts: {remaining_attempts}")
-
-    if attempts == 3:
-        print("Account Locked")
+for outer in range(1, 6):
+    for inner in range(1, 6):
+        if outer % 2 == 0:
+            if inner % 2 == 0:
+                print(outer, inner , "Both the outer and inner are even")
+            else:
+                print(outer, inner, "outer is even and inner is odd")
+        else:
+            if inner % 2 == 0:
+                print(outer, inner, "Outer is odd and inner is even")
+            else:
+                print(outer, inner, "Both are odd")
